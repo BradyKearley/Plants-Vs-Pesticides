@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://m0g4yl3oryg3"]
+[gd_scene load_steps=13 format=3 uid="uid://m0g4yl3oryg3"]
 
 [ext_resource type="Script" path="res://spike_lee.gd" id="1_dbyf7"]
 [ext_resource type="PackedScene" uid="uid://d16t0242wrnlr" path="res://Scenes/cactus_bullet.tscn" id="2_sjpe5"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dxgrj1srmnnct" path="res://Assets/cactusSpritePack/cactusSprite1.png" id="4_xxbxg"]
 [ext_resource type="Texture2D" uid="uid://cdrtgbvio8p8v" path="res://Assets/cactusSpritePack/cactusSprite2.png" id="5_yxpio"]
 [ext_resource type="Texture2D" uid="uid://caaarpe0ac0mn" path="res://Assets/cactusSpritePack/cactusSprite3.png" id="6_cxfxj"]
+[ext_resource type="Texture2D" uid="uid://cc2wntatygggn" path="res://Assets/healthBar2.png" id="7_2017w"]
+[ext_resource type="Script" path="res://Scenes/health_bar.gd" id="8_84dyp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b42to"]
 animations = [{
@@ -63,6 +65,16 @@ shape = SubResource("RectangleShape2D_yowvp")
 [node name="StunTimer" type="Timer" parent="."]
 
 [node name="ShootTimer" type="Timer" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -76.0
+offset_top = -117.0
+offset_right = 948.0
+offset_bottom = 907.0
+scale = Vector2(0.15, 0.1)
+value = 100.0
+texture_progress = ExtResource("7_2017w")
+script = ExtResource("8_84dyp")
 
 [connection signal="body_entered" from="Detection Roots" to="." method="_on_detection_roots_body_entered"]
 [connection signal="body_exited" from="Detection Roots" to="." method="_on_detection_roots_body_exited"]

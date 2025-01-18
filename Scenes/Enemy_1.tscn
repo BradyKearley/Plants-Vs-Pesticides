@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7r8tnnmxk3qe"]
+[gd_scene load_steps=10 format=3 uid="uid://b7r8tnnmxk3qe"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_1.gd" id="1_qes1b"]
 [ext_resource type="Texture2D" uid="uid://bxfxd8id4qa8w" path="res://Assets/flowerSpritePack/flowerSprite0.png" id="2_gbj00"]
 [ext_resource type="Texture2D" uid="uid://cps2cpvka2vdu" path="res://Assets/flowerSpritePack/flowerSprite1.png" id="3_4ly5y"]
+[ext_resource type="Texture2D" uid="uid://cc2wntatygggn" path="res://Assets/healthBar2.png" id="4_5vx0h"]
+[ext_resource type="Script" path="res://Scenes/health_bar.gd" id="5_6tkaq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3vq4"]
 radius = 667.68
@@ -52,6 +54,16 @@ sprite_frames = SubResource("SpriteFrames_shjne")
 animation = &"idle"
 
 [node name="StunTimer" type="Timer" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -76.0
+offset_top = -117.0
+offset_right = 948.0
+offset_bottom = 907.0
+scale = Vector2(0.15, 0.1)
+value = 100.0
+texture_progress = ExtResource("4_5vx0h")
+script = ExtResource("5_6tkaq")
 
 [connection signal="body_entered" from="Detection Roots" to="." method="_on_detection_roots_body_entered"]
 [connection signal="body_exited" from="Detection Roots" to="." method="_on_detection_roots_body_exited"]

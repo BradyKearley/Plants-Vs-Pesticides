@@ -5,6 +5,7 @@ var player_detected = false
 var player: Node2D = null
 var stop_distance = 100  # Minimum distance to stop moving
 var health = 100
+const maxHealth = 100
 var stunnded = false
 var rotation_speed = 360  
 var target_rotation = 0.0  

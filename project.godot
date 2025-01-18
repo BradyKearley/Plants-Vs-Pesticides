@@ -25,6 +25,7 @@ window/size/viewport_height=1080
 enemy=""
 Bullet=""
 Player=""
+Wall=""
 
 [input]
 
