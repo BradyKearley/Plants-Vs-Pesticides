@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://crvtnlu8onmb4"]
+[gd_scene load_steps=5 format=3 uid="uid://c30mko8u3mvik"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
 [ext_resource type="Texture2D" uid="uid://b5s73n4bc422" path="res://Assets/ronaldSprite.png" id="2_rb37p"]
@@ -10,7 +10,7 @@ animations = [{
 "texture": ExtResource("2_rb37p")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -24,6 +24,7 @@ script = ExtResource("1_mdpnj")
 rotation = 3.14159
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_qjfn4")
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.5)
