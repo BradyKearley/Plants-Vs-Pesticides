@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cheupn2x1hkn7"]
+
+[ext_resource type="Script" path="res://m_bouta_bust_bullet.gd" id="1_4g0xh"]
+[ext_resource type="Texture2D" uid="uid://be2ap7mo76dw7" path="res://Assets/pineconeSpritePack/pineconeSpriteProjectile.png" id="2_8ensc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7bt0"]
+size = Vector2(44, 53)
+
+[node name="m_bouta_bust_bullet" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_4g0xh")
+
+[node name="PineconeSpriteProjectile" type="Sprite2D" parent="."]
+position = Vector2(-1.99999, -4.49998)
+scale = Vector2(0.394531, 0.430664)
+texture = ExtResource("2_8ensc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_v7bt0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
