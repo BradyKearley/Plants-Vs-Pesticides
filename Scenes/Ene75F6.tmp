@@ -10,7 +10,7 @@
 radius = 667.68
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3h1cc"]
-size = Vector2(58, 116)
+size = Vector2(62, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edwp8"]
 size = Vector2(73, 139)
@@ -37,8 +37,8 @@ script = ExtResource("1_qes1b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
 shape = SubResource("CircleShape2D_b3vq4")
 
-[node name="body" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(1, -12)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_3h1cc")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]

@@ -35,8 +35,7 @@ func _physics_process(delta):
 		var distance_to_player = position.distance_to(player.position)
 		if distance_to_player > stop_distance:
 			var direction = (player.position - position).normalized()
-			velocity= direction * plant_speed
-	move_and_slide()
+			position += direction * plant_speed * delta
 
 func _on_detection_roots_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -56,11 +55,9 @@ func hit():
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		$StunTimer.start()
-		spin_360()
-		stunnded = true
-		plant_speed = 350
+	$StunTimer.start()
+	spin_360()
+	stunnded = true
 
 
 func _on_stun_timer_timeout() -> void:
