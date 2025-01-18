@@ -11,6 +11,7 @@ scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Ronald"]
 zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_l4bj1")]
 position = Vector2(938, -1)
