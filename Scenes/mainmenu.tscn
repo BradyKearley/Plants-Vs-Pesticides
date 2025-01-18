@@ -4,11 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0v85wvi6ogu6" path="res://Scenes/main.tscn" id="2_s044d"]
 [ext_resource type="Texture2D" uid="uid://bru4q0ehppv2k" path="res://mainmenu/DALL·E 2025-01-18 12.43.57 - A pixelated artwork of an alien-themed sunflower with vibrant purple petals and a glowing green center, giving it an extraterrestrial appearance. The .webp" id="3_kdciv"]
 [ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="4_n7esa"]
-<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://d2ubrakvji1hu" path="res://Assets/menuTheme.mp3" id="5_j3wul"]
-=======
-[ext_resource type="AudioStream" uid="uid://bokodsqdqrkv5" path="res://Assets/menuTheme.mp3" id="5_j3wul"]
->>>>>>> fc81a69adcc816ce9ae45f003ef2f4e22f3c007e
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
