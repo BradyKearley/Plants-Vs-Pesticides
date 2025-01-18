@@ -35,7 +35,6 @@ animation = &"Idle"
 frame_progress = 0.238094
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jlmwi")
 
 [node name="DashTimer" type="Timer" parent="."]
