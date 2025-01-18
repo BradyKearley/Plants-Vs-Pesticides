@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://be7ug3rovbfpo"]
+
+[ext_resource type="Texture2D" uid="uid://bf3mmtxht2jsj" path="res://Assets/New Piskel (1).png" id="1_c5cmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xn0pn"]
+size = Vector2(81.5, 140.5)
+
+[node name="door" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(450.25, 170.25)
+shape = SubResource("RectangleShape2D_xn0pn")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(426.5, 128)
+scale = Vector2(2.37187, 1.8625)
+texture = ExtResource("1_c5cmp")
