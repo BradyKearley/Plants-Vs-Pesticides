@@ -5,7 +5,7 @@ var player_detected = false
 var player = null
 
 func _physics_process(delta):
-	if player_detected:
+	if player_detected && player:
 		var direction = (player.position - position).normalized()
 		position += direction * plant_speed * delta
 
