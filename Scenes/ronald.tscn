@@ -1,14 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://crvtnlu8onmb4"]
+[gd_scene load_steps=7 format=3 uid="uid://crvtnlu8onmb4"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://d3tdmf5lx8qt7" path="res://Assets/playerSpritePack/playerSprite0.png" id="2_qj5le"]
 [ext_resource type="PackedScene" uid="uid://cds8aukk81iw3" path="res://Scenes/bullet.tscn" id="2_yxbem"]
 [ext_resource type="Texture2D" uid="uid://dnkbcbxcu6au2" path="res://Assets/playerSpritePack/playerSprite1.png" id="3_y88xg"]
-=======
-[ext_resource type="Texture2D" uid="uid://ci0btmtldhcj7" path="res://Assets/playerSpritePack/playerSprite0.png" id="2_qj5le"]
-[ext_resource type="Texture2D" uid="uid://d3evd75mony0c" path="res://Assets/playerSpritePack/playerSprite1.png" id="3_y88xg"]
->>>>>>> fed2430664844ddf87cfb1ca910c031154e1f8f2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjfn4"]
 animations = [{
@@ -27,10 +22,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlmwi"]
 size = Vector2(128, 127)
 
-[node name="Ronald" type="CharacterBody2D"]
+[node name="Ronald" type="CharacterBody2D" groups=["Player"]]
 rotation = 3.14159
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_mdpnj")
+bulletScene = ExtResource("2_yxbem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 3.14159
@@ -44,6 +40,10 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_jlmwi")
 
 [node name="DashTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.5
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
