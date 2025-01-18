@@ -1,10 +1,10 @@
 extends CharacterBody2D
 @export var spike : PackedScene   
-var plant_speed = 150
+var plant_speed = 200
 var player_detected = false
 var player: Node2D = null
 var stop_distance = 100  # Minimum distance to stop moving
-var health = 150
+var health = 300
 var stunnded = false
   
 
