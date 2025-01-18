@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxgrj1srmnnct"
-path="res://.godot/imported/cactusSprite1.png-a925b0c3043fbb37b58815be389304dc.ctex"
+uid="uid://76lj2kx5gnxs"
+path="res://.godot/imported/treeOne.png-e80197ef2edd8112e6b1d4dc6fde8ee5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/cactusSpritePack/cactusSprite1.png"
-dest_files=["res://.godot/imported/cactusSprite1.png-a925b0c3043fbb37b58815be389304dc.ctex"]
+source_file="res://Assets/Background/treeOne.png"
+dest_files=["res://.godot/imported/treeOne.png-e80197ef2edd8112e6b1d4dc6fde8ee5.ctex"]
 
 [params]
 

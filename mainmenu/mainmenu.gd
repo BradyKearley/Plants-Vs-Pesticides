@@ -7,6 +7,7 @@ extends Control
 @export var start_game = PackedScene
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_button.button_down.connect(on_start_button_down)

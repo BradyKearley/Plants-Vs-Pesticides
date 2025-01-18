@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://m0g4yl3oryg3"]
 
-[ext_resource type="Script" path="res://Scenes/spike_lee.gd" id="1_dbyf7"]
+[ext_resource type="Script" path="res://spike_lee.gd" id="1_dbyf7"]
 [ext_resource type="PackedScene" uid="uid://d16t0242wrnlr" path="res://Scenes/cactus_bullet.tscn" id="2_sjpe5"]
-[ext_resource type="Texture2D" uid="uid://cybw4w1uvxjt7" path="res://Assets/cactusSpritePack/cactusSprite0.png" id="3_o2kgi"]
-[ext_resource type="Texture2D" uid="uid://t5o234jyri8p" path="res://Assets/cactusSpritePack/cactusSprite1.png" id="4_xxbxg"]
-[ext_resource type="Texture2D" uid="uid://bao7jlulr3cxr" path="res://Assets/cactusSpritePack/cactusSprite2.png" id="5_yxpio"]
-[ext_resource type="Texture2D" uid="uid://bkn5pw7sxhfkp" path="res://Assets/cactusSpritePack/cactusSprite3.png" id="6_cxfxj"]
+[ext_resource type="Texture2D" uid="uid://cbqs7ltliwx2c" path="res://Assets/cactusSpritePack/cactusSprite0.png" id="3_o2kgi"]
+[ext_resource type="Texture2D" uid="uid://dxgrj1srmnnct" path="res://Assets/cactusSpritePack/cactusSprite1.png" id="4_xxbxg"]
+[ext_resource type="Texture2D" uid="uid://cdrtgbvio8p8v" path="res://Assets/cactusSpritePack/cactusSprite2.png" id="5_yxpio"]
+[ext_resource type="Texture2D" uid="uid://caaarpe0ac0mn" path="res://Assets/cactusSpritePack/cactusSprite3.png" id="6_cxfxj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b42to"]
 animations = [{

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://irwleur1xfsp"]
+[gd_scene load_steps=6 format=3 uid="uid://irwleur1xfsp"]
 
-[ext_resource type="Script" path="res://mainmenu/mainmenu.gd" id="1_01ycs"]
-[ext_resource type="Texture2D" uid="uid://bru4q0ehppv2k" path="res://mainmenu/DALL·E 2025-01-18 12.43.57 - A pixelated artwork of an alien-themed sunflower with vibrant purple petals and a glowing green center, giving it an extraterrestrial appearance. The .webp" id="1_8ccui"]
-[ext_resource type="PackedScene" uid="uid://d0v85wvi6ogu6" path="res://Scenes/main.tscn" id="2_ol7ug"]
-[ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="2_so1rt"]
+[ext_resource type="Script" path="res://mainmenu/mainmenu.gd" id="1_uv308"]
+[ext_resource type="PackedScene" uid="uid://d0v85wvi6ogu6" path="res://Scenes/main.tscn" id="2_s044d"]
+[ext_resource type="Texture2D" uid="uid://bru4q0ehppv2k" path="res://mainmenu/DALL·E 2025-01-18 12.43.57 - A pixelated artwork of an alien-themed sunflower with vibrant purple petals and a glowing green center, giving it an extraterrestrial appearance. The .webp" id="3_kdciv"]
+[ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="4_n7esa"]
+[ext_resource type="AudioStream" uid="uid://3705kk5reiye" path="res://Assets/menuTheme.mp3" id="5_j3wul"]
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -13,16 +14,16 @@ anchor_bottom = 1.0
 offset_bottom = 352.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_01ycs")
-start_game = ExtResource("2_ol7ug")
+script = ExtResource("1_uv308")
+start_game = ExtResource("2_s044d")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 1.0
 offset_top = -24.0
-offset_right = 1144.0
-offset_bottom = 1000.0
-texture = ExtResource("1_8ccui")
+offset_right = 1917.0
+offset_bottom = 1076.0
+texture = ExtResource("3_kdciv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -52,7 +53,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 12
 theme_override_constants/shadow_offset_y = 12
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_so1rt")
+theme_override_fonts/font = ExtResource("4_n7esa")
 theme_override_font_sizes/font_size = 100
 text = "Plants V.S Pestisides"
 horizontal_alignment = 1
@@ -79,7 +80,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.410595, 0.288319, 0.138041, 1)
 theme_override_colors/font_color = Color(0.972549, 0.972549, 0.972549, 1)
 theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("2_so1rt")
+theme_override_fonts/font = ExtResource("4_n7esa")
 theme_override_font_sizes/font_size = 100
 text = "Start
 Game"
@@ -93,7 +94,11 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.410595, 0.288319, 0.138041, 1)
 theme_override_colors/font_color = Color(0.972549, 0.972549, 0.972549, 1)
 theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("2_so1rt")
+theme_override_fonts/font = ExtResource("4_n7esa")
 theme_override_font_sizes/font_size = 100
 text = "Exit
 Game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j3wul")
+autoplay = true

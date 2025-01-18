@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 @export var bulletScene: PackedScene
 const SPEED = 600.0
 const JUMP_VELOCITY = -400.0
@@ -12,9 +11,8 @@ var health = 100
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 func _process(delta: float) -> void:
-	
 	if health <=0:
-		print("DEATH")
+		get_tree().quit()
 	
 	var mouse_position = get_global_mouse_position()
 	look_at(mouse_position)
@@ -24,6 +22,12 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if dashSpeed > 1:
 		dashSpeed -= .5
+		
+	if canDash:
+		$CanvasLayer/Dash.play("Green")
+	else:
+		$CanvasLayer/Dash.play("Red")
+		
 	if Input.is_action_just_pressed("ui_accept") and canDash:
 		dashSpeed = 4
 		canDash = false

@@ -1,16 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7rgqwleigmlw"]
+[gd_scene load_steps=2 format=3 uid="uid://b7rgqwleigmlw"]
 
-[ext_resource type="Texture2D" uid="uid://rrjqlipogvns" path="res://Assets/New Piskel (5).png" id="1_sb4gj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvou"]
-size = Vector2(78, 41)
+[ext_resource type="Texture2D" uid="uid://rrjqlipogvns" path="res://Assets/Background/Jacob/New Piskel (5).png" id="1_sb4gj"]
 
 [node name="r_ock" type="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, 0.5)
-shape = SubResource("RectangleShape2D_5bvou")
-
 [node name="NewPiskel(5)" type="Sprite2D" parent="."]
+modulate = Color(1, 0.539143, 0.989917, 1)
 position = Vector2(17, 10)
 texture = ExtResource("1_sb4gj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(-33, 19, 46, 19, 46, 1, 38, -7, 36, -16, 30, -20, 17, -29, -2, -29, -13, -20, -18, -16, -22, -10, -28, -1, -33, 6)
