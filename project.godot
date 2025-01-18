@@ -17,7 +17,11 @@ config/icon="res://Assets/icon.svg"
 
 [global_group]
 
+<<<<<<< HEAD
 enemy=""
+=======
+Player=""
+>>>>>>> 69cd3090163d4e9e4fc7751e217c3e16b5527ba6
 
 [input]
 
