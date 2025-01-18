@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://m0g4yl3oryg3"]
+[gd_scene load_steps=8 format=3 uid="uid://m0g4yl3oryg3"]
 
 [ext_resource type="Script" path="res://Scenes/spike_lee.gd" id="1_dbyf7"]
 [ext_resource type="Texture2D" uid="uid://bxfxd8id4qa8w" path="res://Assets/flowerSpritePack/flowerSprite0.png" id="1_use8a"]
+[ext_resource type="PackedScene" uid="uid://d16t0242wrnlr" path="res://Scenes/cactus_bullet.tscn" id="2_sjpe5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b42to"]
 animations = [{
@@ -23,16 +24,17 @@ size = Vector2(62, 132)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowvp"]
 size = Vector2(73, 139)
 
-[node name="Spike Lee" type="CharacterBody2D"]
+[node name="Spike Lee" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_dbyf7")
+spike = ExtResource("2_sjpe5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_b42to")
 
-[node name="Detection Roots" type="Area2D" parent="."]
+[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
 shape = SubResource("CircleShape2D_nqb2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
@@ -49,4 +51,8 @@ shape = SubResource("RectangleShape2D_yowvp")
 
 [node name="ShootTimer" type="Timer" parent="."]
 
+[connection signal="body_entered" from="Detection Roots" to="." method="_on_detection_roots_body_entered"]
+[connection signal="body_exited" from="Detection Roots" to="." method="_on_detection_roots_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
