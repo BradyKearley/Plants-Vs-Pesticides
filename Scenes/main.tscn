@@ -1,9 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0v85wvi6ogu6"]
+[gd_scene load_steps=9 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
+[ext_resource type="Texture2D" uid="uid://ckc83ybfbwa6t" path="res://Assets/dashSpritePack/dashSprite0.png" id="3_5heyo"]
 [ext_resource type="PackedScene" uid="uid://bscur1ynoyaa3" path="res://Scenes/level_1.tscn" id="3_pplsb"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
+=======
+[ext_resource type="PackedScene" uid="uid://m0g4yl3oryg3" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
+[ext_resource type="Texture2D" uid="uid://ba3jxk4c6u0k2" path="res://Assets/dashSpritePack/dashSprite1.png" id="4_p2wie"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="5_eeirm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gdg1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5heyo")
+}],
+"loop": true,
+"name": &"Green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p2wie")
+}],
+"loop": true,
+"name": &"Red",
+"speed": 5.0
+}]
+>>>>>>> 15ea0aed4761afd791a891d6cdb4a53613b77f27
 
 [node name="Main" type="Node"]
 
@@ -12,14 +38,25 @@ scale = Vector2(10, 10)
 
 [node name="Ronald" parent="." instance=ExtResource("1_71t18")]
 rotation = 0.0
-scale = Vector2(1, 1)
+scale = Vector2(0.75, 0.75)
 
 [node name="Camera2D" type="Camera2D" parent="Ronald"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(1.25, 1.25)
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Ronald"]
+script = ExtResource("5_eeirm")
+
+[node name="Dash" type="AnimatedSprite2D" parent="Ronald/CanvasLayer"]
+position = Vector2(401, 206)
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_1gdg1")
+animation = &"Green"
 
 [node name="Spike Lee" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(660, 296)
+scale = Vector2(0.5, 0.5)
 
 [node name="Enemy" parent="." instance=ExtResource("2_l4bj1")]
 position = Vector2(1170, -561)
+scale = Vector2(0.5, 0.5)
