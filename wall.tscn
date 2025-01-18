@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bm0qsdadgrrxq" path="res://Assets/New Piskel (3).png" id="1_g4pde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5b2k"]
-size = Vector2(83, 64)
+size = Vector2(366, 208)
 
 [node name="deadBranch" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(41.5, 773)
+position = Vector2(324, 611)
 shape = SubResource("RectangleShape2D_m5b2k")
 
 [node name="NewPiskel(3)" type="Sprite2D" parent="."]
-position = Vector2(46.5, 721)
-scale = Vector2(0.176758, 0.212891)
+position = Vector2(351, 422)
+scale = Vector2(0.771484, 0.796875)
 texture = ExtResource("1_g4pde")
