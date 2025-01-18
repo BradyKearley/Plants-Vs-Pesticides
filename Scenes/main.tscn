@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://d0v85wvi6ogu6"]
-=======
-[gd_scene load_steps=10 format=3 uid="uid://d0v85wvi6ogu6"]
->>>>>>> f7f188432216529a01592353ea118e2c01623536
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
@@ -67,19 +63,5 @@ position = Vector2(660, 296)
 [node name="Enemy" parent="." instance=ExtResource("2_l4bj1")]
 position = Vector2(885, -890)
 
-<<<<<<< HEAD
 [node name="mBoutaBust" parent="." instance=ExtResource("9_m4pex")]
 position = Vector2(183, -307)
-=======
-[node name="Enemy2" parent="." instance=ExtResource("2_l4bj1")]
-position = Vector2(3156, 572)
-
-[node name="Enemy4" parent="." instance=ExtResource("2_l4bj1")]
-position = Vector2(4056, 332)
-
-[node name="Enemy3" parent="." instance=ExtResource("2_l4bj1")]
-position = Vector2(1443, -2248)
-
-[node name="Spike Lee2" parent="." instance=ExtResource("4_mdr4i")]
-position = Vector2(3776, -636)
->>>>>>> f7f188432216529a01592353ea118e2c01623536
