@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://b56o2nbj4crpm"]
+
+[ext_resource type="Texture2D" uid="uid://dlsdbbfrkvx0w" path="res://Assets/New Piskel (4).png" id="1_2kj0e"]
+[ext_resource type="PackedScene" uid="uid://c0vatgxmt1vj5" path="res://wall.tscn" id="2_te0ov"]
+[ext_resource type="PackedScene" uid="uid://b7rgqwleigmlw" path="res://r_ock.tscn" id="3_tjvev"]
+
+[node name="Background" type="ColorRect"]
+offset_left = -1365.0
+offset_top = -688.0
+offset_right = 1466.0
+offset_bottom = 876.0
+
+[node name="purp" type="Sprite2D" parent="."]
+position = Vector2(1452.5, 1010.5)
+scale = Vector2(2.87012, 2.07715)
+texture = ExtResource("1_2kj0e")
+
+[node name="deadBranch" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(1174, 893)
+
+[node name="deadBranch2" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(1900, 657)
+
+[node name="deadBranch3" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(625, 531)
+
+[node name="deadBranch4" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(1169, -69)
+
+[node name="deadBranch5" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(2112, -140)
+
+[node name="deadBranch6" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(1285, 465)
+
+[node name="deadBranch7" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(217, -326)
+
+[node name="deadBranch8" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(2454, 450)
+
+[node name="deadBranch9" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(559, 107)
+
+[node name="deadBranch10" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(308, 1135)
+
+[node name="deadBranch11" parent="." instance=ExtResource("2_te0ov")]
+position = Vector2(1830, -528)
+
+[node name="r_ock" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(1527, 1483)
+
+[node name="r_ock2" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(927, 934)
+
+[node name="r_ock3" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(1779, 934)
+
+[node name="r_ock4" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(806, 1770)
+
+[node name="r_ock5" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(1900, 1906)
+
+[node name="r_ock6" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(1693, 505)
+
+[node name="r_ock7" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(237, 727)
+
+[node name="r_ock8" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(2490, 248)
+
+[node name="r_ock9" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(2651, 924)
+
+[node name="r_ock10" parent="." instance=ExtResource("3_tjvev")]
+position = Vector2(685, 198)
