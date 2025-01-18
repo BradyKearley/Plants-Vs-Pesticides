@@ -1,31 +1,15 @@
 extends CharacterBody2D
 
-var plant_speed = 200
+var plant_speed = 400
 var player_detected = false
 var player: Node2D = null
 var stop_distance = 100  # Minimum distance to stop moving
-var health = 100
+var health = 25
 const maxHealth = 100
 var stunnded = false
 var rotation_speed = 360  
 var target_rotation = 0.0  
-var spinning = false    
-
-func spin_360():
-	if spinning:
-		return  # Prevent triggering another spin while already spinning
-	spinning = true
-	target_rotation = rotation + deg_to_rad(360)
-func _process(delta: float) -> void:
-	if spinning:
-		# Incrementally rotate the sprite
-		var step = rotation_speed * delta
-		rotation += deg_to_rad(step)
-
-		# Check if the target rotation is reached
-		if rotation >= target_rotation:
-			rotation = target_rotation  # Snap to the target rotation
-			spinning = false  # Stop spinning
+var expload = false
 
 func _ready() -> void:
 	$StunTimer.stop()
@@ -51,7 +35,6 @@ func _on_detection_roots_body_exited(body: Node2D) -> void:
 
 func hit():
 	health -= 25
-	print(health)
 	if health <= 0:
 		queue_free()
 
@@ -59,11 +42,18 @@ func hit():
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		$StunTimer.start()
-		spin_360()
+		$AnimatedSprite2D.play("Explode")
+		expload = true
 		stunnded = true
-		plant_speed = 350
 
 
 func _on_stun_timer_timeout() -> void:
 	stunnded = false
 	$StunTimer.stop()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	print("workds")
+	if expload:
+		$AnimatedSprite2D.play("idle")
+		expload = false
