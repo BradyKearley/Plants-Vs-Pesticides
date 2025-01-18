@@ -37,8 +37,9 @@ func _physics_process(delta):
 			position += direction * plant_speed * delta
 
 func _on_detection_roots_body_entered(body: Node2D) -> void:
-	player_detected = true
-	player = body
+	if body.is_in_group("Player"):
+		player_detected = true
+		player = body
 
 func _on_detection_roots_body_exited(body: Node2D) -> void:
 	if body == player:

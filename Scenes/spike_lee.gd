@@ -1,30 +1,14 @@
 extends CharacterBody2D
-
+@export var spike : PackedScene   
 var plant_speed = 150
 var player_detected = false
 var player: Node2D = null
 var stop_distance = 100  # Minimum distance to stop moving
 var health = 150
 var stunnded = false
-var rotation_speed = 360  
-var target_rotation = 0.0  
-var spinning = false    
+  
 
-func spin_360():
-	if spinning:
-		return  # Prevent triggering another spin while already spinning
-	spinning = true
-	target_rotation = rotation + deg_to_rad(360)
-func _process(delta: float) -> void:
-	if spinning:
-		# Incrementally rotate the sprite
-		var step = rotation_speed * delta
-		rotation += deg_to_rad(step)
 
-		# Check if the target rotation is reached
-		if rotation >= target_rotation:
-			rotation = target_rotation  # Snap to the target rotation
-			spinning = false  # Stop spinning
 
 func _ready() -> void:
 	$StunTimer.stop()
@@ -38,8 +22,9 @@ func _physics_process(delta):
 			position += direction * plant_speed * delta
 
 func _on_detection_roots_body_entered(body: Node2D) -> void:
-	player_detected = true
-	player = body
+	if body.is_in_group("Player"):
+		player_detected = true
+		player = body
 
 func _on_detection_roots_body_exited(body: Node2D) -> void:
 	if body == player:
@@ -54,9 +39,9 @@ func hit():
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	$StunTimer.start()
-	spin_360()
-	stunnded = true
+	if body.is_in_group("Player"):
+		$StunTimer.start()
+		stunnded = true
 
 
 func _on_stun_timer_timeout() -> void:
@@ -66,4 +51,29 @@ func _on_stun_timer_timeout() -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
-	pass # Replace with function body.
+	spawn_bullets_in_eight_directions()
+func spawn_bullets_in_eight_directions():
+	# Define the eight directions: up, down, left, right, and the four diagonals
+	var directions = [
+		Vector2(0, -1),  # Up
+		Vector2(0, 1),   # Down
+		Vector2(-1, 0),  # Left
+		Vector2(1, 0),   # Right
+		Vector2(-1, -1), # Diagonal Down-Left
+		Vector2(1, -1),  # Diagonal Down-Right
+		Vector2(-1, 1),  # Diagonal Up-Left
+		Vector2(1, 1)    # Diagonal Up-Right
+	]
+
+	for direction in directions:
+		# Instance the bullet
+		var bullet = spike.instantiate()
+
+		# Add the bullet as a child of the current node
+		add_child(bullet)
+
+		# Set the bullet's position to the spawner's position
+		bullet.global_position = global_position
+
+		# Initialize the bullet with the direction
+		bullet.initialize(direction.normalized() * 1)
