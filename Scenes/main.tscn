@@ -1,9 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0v85wvi6ogu6"]
+[gd_scene load_steps=9 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
+[ext_resource type="Texture2D" uid="uid://ckc83ybfbwa6t" path="res://Assets/dashSpritePack/dashSprite0.png" id="3_8sfyp"]
 [ext_resource type="PackedScene" uid="uid://bscur1ynoyaa3" path="res://Scenes/level_1.tscn" id="3_pplsb"]
-[ext_resource type="PackedScene" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
+[ext_resource type="Script" path="res://Scripts/canvas_layer.gd" id="3_strk3"]
+[ext_resource type="Texture2D" uid="uid://ba3jxk4c6u0k2" path="res://Assets/dashSpritePack/dashSprite1.png" id="4_atlr6"]
+[ext_resource type="PackedScene" uid="uid://m0g4yl3oryg3" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvdop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8sfyp")
+}],
+"loop": true,
+"name": &"Green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_atlr6")
+}],
+"loop": true,
+"name": &"Red",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node"]
 
@@ -17,6 +39,14 @@ scale = Vector2(1, 1)
 [node name="Camera2D" type="Camera2D" parent="Ronald"]
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Ronald"]
+script = ExtResource("3_strk3")
+
+[node name="Dash" type="AnimatedSprite2D" parent="Ronald/CanvasLayer"]
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_uvdop")
+animation = &"Red"
 
 [node name="Spike Lee" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(660, 296)
