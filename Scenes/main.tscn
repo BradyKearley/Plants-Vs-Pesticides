@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=10 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
@@ -27,11 +28,14 @@ animations = [{
 "name": &"Red",
 "speed": 5.0
 }]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://d0v85wvi6ogu6"]
+
+[ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
+>>>>>>> 7daf06a99654d03b64b73ec9b7380ebcde42b712
 
 [node name="Main" type="Node"]
-
-[node name="Level 1" parent="." instance=ExtResource("3_pplsb")]
-scale = Vector2(10, 10)
 
 [node name="Ronald" parent="." instance=ExtResource("1_71t18")]
 rotation = 0.0
@@ -41,6 +45,7 @@ scale = Vector2(1, 1)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
+<<<<<<< HEAD
 [node name="CanvasLayer" type="CanvasLayer" parent="Ronald"]
 script = ExtResource("3_strk3")
 
@@ -59,3 +64,7 @@ position = Vector2(660, 296)
 
 [node name="Enemy" parent="." instance=ExtResource("2_l4bj1")]
 position = Vector2(1170, -561)
+=======
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_l4bj1")]
+position = Vector2(938, -1)
+>>>>>>> 7daf06a99654d03b64b73ec9b7380ebcde42b712
