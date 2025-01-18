@@ -7,7 +7,6 @@ var canDash = true
 var canShoot = true
 var dashSpeed = 1
 var dashCooldown
-
 var health = 100
 
 func _ready() -> void:

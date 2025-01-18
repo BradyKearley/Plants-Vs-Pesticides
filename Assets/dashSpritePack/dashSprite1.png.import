@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm0qsdadgrrxq"
-path="res://.godot/imported/New Piskel (3).png-324a777f6e37400f657cca004e114d65.ctex"
+uid="uid://ba3jxk4c6u0k2"
+path="res://.godot/imported/dashSprite1.png-e497df6f97bede364cab1d666c74742f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/New Piskel (3).png"
-dest_files=["res://.godot/imported/New Piskel (3).png-324a777f6e37400f657cca004e114d65.ctex"]
+source_file="res://Assets/dashSpritePack/dashSprite1.png"
+dest_files=["res://.godot/imported/dashSprite1.png-e497df6f97bede364cab1d666c74742f.ctex"]
 
 [params]
 
