@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxgrj1srmnnct" path="res://Assets/cactusSpritePack/cactusSprite1.png" id="4_xxbxg"]
 [ext_resource type="Texture2D" uid="uid://cdrtgbvio8p8v" path="res://Assets/cactusSpritePack/cactusSprite2.png" id="5_yxpio"]
 [ext_resource type="Texture2D" uid="uid://caaarpe0ac0mn" path="res://Assets/cactusSpritePack/cactusSprite3.png" id="6_cxfxj"]
-[ext_resource type="Texture2D" uid="uid://dqpdhvqjcm8bm" path="res://Assets/healthBar2.png" id="7_2017w"]
+[ext_resource type="Texture2D" uid="uid://36ikvexbvuf8" path="res://Assets/healthBar2.png" id="7_2017w"]
 [ext_resource type="Script" path="res://Scenes/health_bar.gd" id="8_84dyp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b42to"]
