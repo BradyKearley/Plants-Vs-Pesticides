@@ -54,26 +54,27 @@ func _on_shoot_timer_timeout() -> void:
 	spawn_bullets_in_eight_directions()
 func spawn_bullets_in_eight_directions():
 	# Define the eight directions: up, down, left, right, and the four diagonals
-	var directions = [
-		Vector2(0, -1),  # Up
-		Vector2(0, 1),   # Down
-		Vector2(-1, 0),  # Left
-		Vector2(1, 0),   # Right
-		Vector2(-1, -1), # Diagonal Down-Left
-		Vector2(1, -1),  # Diagonal Down-Right
-		Vector2(-1, 1),  # Diagonal Up-Left
-		Vector2(1, 1)    # Diagonal Up-Right
-	]
+	if player_detected:
+		var directions = [
+			Vector2(0, -1),  # Up
+			Vector2(0, 1),   # Down
+			Vector2(-1, 0),  # Left
+			Vector2(1, 0),   # Right
+			Vector2(-1, -1), # Diagonal Down-Left
+			Vector2(1, -1),  # Diagonal Down-Right
+			Vector2(-1, 1),  # Diagonal Up-Left
+			Vector2(1, 1)    # Diagonal Up-Right
+		]
 
-	for direction in directions:
-		# Instance the bullet
-		var bullet = spike.instantiate()
+		for direction in directions:
+			# Instance the bullet
+			var bullet = spike.instantiate()
 
-		# Add the bullet as a child of the current node
-		add_child(bullet)
+			# Add the bullet as a child of the current node
+			add_child(bullet)
 
-		# Set the bullet's position to the spawner's position
-		bullet.global_position = global_position
+			# Set the bullet's position to the spawner's position
+			bullet.global_position = global_position
 
-		# Initialize the bullet with the direction
-		bullet.initialize(direction.normalized() * 1)
+			# Initialize the bullet with the direction
+			bullet.initialize(direction.normalized() * 1)
