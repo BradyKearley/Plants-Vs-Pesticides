@@ -30,9 +30,9 @@ animations = [{
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_qes1b")
 
-[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
+[node name="Detection Roots" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
 shape = SubResource("CircleShape2D_b3vq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]

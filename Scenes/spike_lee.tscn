@@ -45,9 +45,9 @@ scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_b42to")
 animation = &"idle"
 
-[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
+[node name="Detection Roots" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
 shape = SubResource("CircleShape2D_nqb2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]

@@ -78,4 +78,3 @@ func _on_bounding_box_area_entered(area: Area2D) -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		health -= 25
-		print(health)
