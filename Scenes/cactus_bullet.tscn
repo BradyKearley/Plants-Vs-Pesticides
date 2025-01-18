@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d16t0242wrnlr"]
 
 [ext_resource type="Script" path="res://Scenes/cactus_bullet.gd" id="1_rdtaa"]
-[ext_resource type="Texture2D" uid="uid://s0n8wp6impuc" path="res://Assets/playerSpritePack/playerBullet.png" id="2_55a4a"]
+[ext_resource type="Texture2D" uid="uid://hhrlnuys83nb" path="res://Assets/cactusSpritePack/cactusSpriteBullet4.png" id="2_0cht4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7bt0"]
 size = Vector2(44, 16)
@@ -12,8 +12,9 @@ script = ExtResource("1_rdtaa")
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["enemy"]]
 modulate = Color(0.754183, 0.120515, 0.551869, 1)
 self_modulate = Color(0, 0.466667, 0.576471, 1)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_55a4a")
+rotation = -0.785398
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_0cht4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
 position = Vector2(0, -2)

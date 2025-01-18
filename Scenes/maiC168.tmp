@@ -40,15 +40,6 @@ scale = Vector2(0.75, 0.75)
 zoom = Vector2(1.25, 1.25)
 position_smoothing_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Ronald"]
-script = ExtResource("5_eeirm")
-
-[node name="Dash" type="AnimatedSprite2D" parent="Ronald/CanvasLayer"]
-position = Vector2(401, 206)
-scale = Vector2(0.12, 0.12)
-sprite_frames = SubResource("SpriteFrames_1gdg1")
-animation = &"Green"
-
 [node name="Spike Lee" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(660, 296)
 scale = Vector2(0.5, 0.5)
@@ -56,3 +47,12 @@ scale = Vector2(0.5, 0.5)
 [node name="Enemy" parent="." instance=ExtResource("2_l4bj1")]
 position = Vector2(1170, -561)
 scale = Vector2(0.5, 0.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_eeirm")
+
+[node name="Dash" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(401, 206)
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_1gdg1")
+animation = &"Green"

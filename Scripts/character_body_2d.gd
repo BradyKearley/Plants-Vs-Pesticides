@@ -24,6 +24,12 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if dashSpeed > 1:
 		dashSpeed -= .5
+		
+	if canDash:
+		$CanvasLayer/Dash.play("Green")
+	else:
+		$CanvasLayer/Dash.play("Red")
+		
 	if Input.is_action_just_pressed("ui_accept") and canDash:
 		dashSpeed = 4
 		canDash = false
