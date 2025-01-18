@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-
+@export var bulletScene: PackedScene
 const SPEED = 600.0
 const JUMP_VELOCITY = -400.0
 var canDash = true
+var canShoot = true
 var dashSpeed = 1
 var dashCooldown
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var mouse_position = get_global_mouse_position()
 	look_at(mouse_position)
+	if Input.is_action_just_pressed("Shoot"):
+		shoot()
 func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if dashSpeed > 1:
@@ -35,3 +38,20 @@ func _on_dash_timer_timeout() -> void:
 	$DashTimer.stop()
 func reduceDashCooldown(reduction:int):
 	$DashTimer.wait_time -=reduction
+	
+	
+func shoot():
+	if canShoot:
+		canShoot = false
+		$ShootTimer.start()
+		var bullet = bulletScene.instantiate()
+		bullet.global_position = global_position  # Set bullet spawn position
+		bullet.initialize((get_global_mouse_position() - global_position).normalized())  # Set direction
+		bullet.look_at(get_global_mouse_position())
+		get_parent().add_child(bullet)  # Add the bullet to the scene
+
+
+func _on_shoot_timer_timeout() -> void:
+	$ShootTimer.stop()
+	canShoot = true
+	pass # Replace with function body.
