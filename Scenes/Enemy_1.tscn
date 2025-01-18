@@ -30,9 +30,9 @@ animations = [{
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_qes1b")
 
-[node name="Detection Roots" type="Area2D" parent="."]
+[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
 shape = SubResource("CircleShape2D_b3vq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
@@ -45,7 +45,7 @@ shape = SubResource("RectangleShape2D_3h1cc")
 position = Vector2(1.5, -13.5)
 shape = SubResource("RectangleShape2D_edwp8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
 position = Vector2(-9.53674e-07, -1)
 scale = Vector2(0.13, 0.168)
 sprite_frames = SubResource("SpriteFrames_shjne")
