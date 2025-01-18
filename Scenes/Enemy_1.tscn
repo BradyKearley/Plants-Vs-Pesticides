@@ -1,31 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7r8tnnmxk3qe"]
+[gd_scene load_steps=8 format=3 uid="uid://b7r8tnnmxk3qe"]
 
-[ext_resource type="Texture2D" uid="uid://bug5run3uk885" path="res://Assets/icon.svg" id="1_k0rha"]
-[ext_resource type="Script" path="res://Scenes/enemy_1.gd" id="1_qes1b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4w3r"]
-size = Vector2(95, 159)
+[ext_resource type="Script" path="res://Scripts/enemy_1.gd" id="1_qes1b"]
+[ext_resource type="Texture2D" uid="uid://bxfxd8id4qa8w" path="res://Assets/flowerSpritePack/flowerSprite0.png" id="2_gbj00"]
+[ext_resource type="Texture2D" uid="uid://cps2cpvka2vdu" path="res://Assets/flowerSpritePack/flowerSprite1.png" id="3_4ly5y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3vq4"]
 radius = 667.68
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h1cc"]
+size = Vector2(62, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edwp8"]
+size = Vector2(73, 139)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shjne"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gbj00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4ly5y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_qes1b")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.415686, 0.74902, 0.352941, 1)
-position = Vector2(-9.53674e-07, -1)
-scale = Vector2(0.753906, 1.26953)
-texture = ExtResource("1_k0rha")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -1.5)
-shape = SubResource("RectangleShape2D_l4w3r")
 
 [node name="Detection Roots" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
 shape = SubResource("CircleShape2D_b3vq4")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_3h1cc")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["enemy"]]
+position = Vector2(1.5, -13.5)
+shape = SubResource("RectangleShape2D_edwp8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, -1)
+scale = Vector2(0.1, 0.168)
+sprite_frames = SubResource("SpriteFrames_shjne")
+animation = &"idle"
+
+[node name="StunTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Detection Roots" to="." method="_on_detection_roots_body_entered"]
 [connection signal="body_exited" from="Detection Roots" to="." method="_on_detection_roots_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

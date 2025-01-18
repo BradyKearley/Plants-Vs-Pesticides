@@ -7,9 +7,16 @@ var canDash = true
 var canShoot = true
 var dashSpeed = 1
 var dashCooldown
+
+var health = 100
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 func _process(delta: float) -> void:
+	
+	if health <=0:
+		print("DEATH")
+	
 	var mouse_position = get_global_mouse_position()
 	look_at(mouse_position)
 	if Input.is_action_just_pressed("Shoot"):
@@ -46,6 +53,7 @@ func shoot():
 		$ShootTimer.start()
 		var bullet = bulletScene.instantiate()
 		bullet.global_position = global_position  # Set bullet spawn position
+		
 		bullet.initialize((get_global_mouse_position() - global_position).normalized())  # Set direction
 		bullet.look_at(get_global_mouse_position())
 		get_parent().add_child(bullet)  # Add the bullet to the scene
@@ -55,3 +63,16 @@ func _on_shoot_timer_timeout() -> void:
 	$ShootTimer.stop()
 	canShoot = true
 	pass # Replace with function body.
+
+
+
+func _on_bounding_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Bullet"):
+		area.queue_free()
+		
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		health -= 25
+		print(health)
