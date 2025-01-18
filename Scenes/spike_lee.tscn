@@ -1,17 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://m0g4yl3oryg3"]
+[gd_scene load_steps=11 format=3 uid="uid://m0g4yl3oryg3"]
 
 [ext_resource type="Script" path="res://Scenes/spike_lee.gd" id="1_dbyf7"]
-[ext_resource type="Texture2D" uid="uid://bxfxd8id4qa8w" path="res://Assets/flowerSpritePack/flowerSprite0.png" id="1_use8a"]
 [ext_resource type="PackedScene" uid="uid://d16t0242wrnlr" path="res://Scenes/cactus_bullet.tscn" id="2_sjpe5"]
+[ext_resource type="Texture2D" uid="uid://bobq4kukrwdqi" path="res://Assets/cactusSpritePack/cactusSprite0.png" id="3_o2kgi"]
+[ext_resource type="Texture2D" uid="uid://c1lrhhobk32rj" path="res://Assets/cactusSpritePack/cactusSprite1.png" id="4_xxbxg"]
+[ext_resource type="Texture2D" uid="uid://cacavcuamh5nv" path="res://Assets/cactusSpritePack/cactusSprite2.png" id="5_yxpio"]
+[ext_resource type="Texture2D" uid="uid://ldmva6aqdke4" path="res://Assets/cactusSpritePack/cactusSprite3.png" id="6_cxfxj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b42to"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_use8a")
+"texture": ExtResource("3_o2kgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xxbxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yxpio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cxfxj")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -31,6 +43,7 @@ spike = ExtResource("2_sjpe5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_b42to")
+animation = &"idle"
 
 [node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
 
