@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
 [ext_resource type="PackedScene" uid="uid://bscur1ynoyaa3" path="res://Scenes/level_1.tscn" id="3_pplsb"]
-[ext_resource type="PackedScene" uid="uid://m0g4yl3oryg3" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
+[ext_resource type="PackedScene" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
 
 [node name="Main" type="Node"]
 
