@@ -12,6 +12,7 @@ func _physics_process(delta):
 func _on_detection_roots_body_entered(body: Node2D) -> void:
 	player_detected = true
 	player = body
+ 
 
 func _on_detection_roots_body_exited(body: Node2D) -> void:
 	player_detected = true
