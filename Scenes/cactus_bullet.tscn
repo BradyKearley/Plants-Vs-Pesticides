@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d16t0242wrnlr"]
 
-[ext_resource type="Script" path="res://Scenes/cactus_bullet.gd" id="1_rdtaa"]
+[ext_resource type="Script" path="res://Scripts/cactus_bullet.gd" id="1_rdtaa"]
 [ext_resource type="Texture2D" uid="uid://hhrlnuys83nb" path="res://Assets/cactusSpritePack/cactusSpriteBullet4.png" id="2_0cht4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7bt0"]

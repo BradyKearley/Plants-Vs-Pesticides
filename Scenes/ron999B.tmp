@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://crvtnlu8onmb4"]
+
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
+[ext_resource type="Texture2D" uid="uid://d3tdmf5lx8qt7" path="res://Assets/playerSpritePack/playerSprite0.png" id="2_qj5le"]
+[ext_resource type="PackedScene" uid="uid://cds8aukk81iw3" path="res://Scenes/bullet.tscn" id="2_yxbem"]
+[ext_resource type="PackedScene" uid="uid://irwleur1xfsp" path="res://Scenes/mainmenu.tscn" id="3_1uq6i"]
+[ext_resource type="Texture2D" uid="uid://dnkbcbxcu6au2" path="res://Assets/playerSpritePack/playerSprite1.png" id="3_y88xg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjfn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qj5le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y88xg")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oa8gc"]
+radius = 45.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhtll"]
+size = Vector2(7810, 450.023)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nd0m"]
+size = Vector2(639.949, 12650)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viwf3"]
+size = Vector2(510.01, 12820)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jaky4"]
+radius = 50.0
+
+[node name="Ronald" type="CharacterBody2D" groups=["Player"]]
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_mdpnj")
+mainmenu = ExtResource("3_1uq6i")
+bulletScene = ExtResource("2_yxbem")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_qjfn4")
+animation = &"Idle"
+frame_progress = 0.238094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.76837e-07, -1.81899e-12)
+shape = SubResource("CircleShape2D_oa8gc")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="BoundingBox" type="Area2D" parent="."]
+position = Vector2(12270, 30.0311)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundingBox"]
+position = Vector2(44.985, 5960)
+shape = SubResource("RectangleShape2D_lhtll")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BoundingBox"]
+position = Vector2(3619.96, 12175)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_3nd0m")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BoundingBox"]
+position = Vector2(-3810.03, 12470)
+shape = SubResource("RectangleShape2D_viwf3")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1.81899e-12, -9.53674e-07)
+shape = SubResource("CircleShape2D_jaky4")
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="area_entered" from="BoundingBox" to="." method="_on_bounding_box_area_entered"]
+[connection signal="body_entered" from="BoundingBox" to="." method="_on_bounding_box_body_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

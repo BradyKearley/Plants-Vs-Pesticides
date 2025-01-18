@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 @export var bulletScene: PackedScene
 const SPEED = 600.0
 const JUMP_VELOCITY = -400.0
@@ -12,9 +11,8 @@ var health = 100
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 func _process(delta: float) -> void:
-	
 	if health <=0:
-		print("DEATH")
+		get_tree().quit()
 	
 	var mouse_position = get_global_mouse_position()
 	look_at(mouse_position)

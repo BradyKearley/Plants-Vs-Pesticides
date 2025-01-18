@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://m0g4yl3oryg3"]
 
-[ext_resource type="Script" path="res://Scenes/spike_lee.gd" id="1_dbyf7"]
+[ext_resource type="Script" path="res://spike_lee.gd" id="1_dbyf7"]
 [ext_resource type="PackedScene" uid="uid://d16t0242wrnlr" path="res://Scenes/cactus_bullet.tscn" id="2_sjpe5"]
 [ext_resource type="Texture2D" uid="uid://cybw4w1uvxjt7" path="res://Assets/cactusSpritePack/cactusSprite0.png" id="3_o2kgi"]
 [ext_resource type="Texture2D" uid="uid://t5o234jyri8p" path="res://Assets/cactusSpritePack/cactusSprite1.png" id="4_xxbxg"]
