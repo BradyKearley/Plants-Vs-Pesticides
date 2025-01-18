@@ -60,4 +60,4 @@ texture_progress = ExtResource("6_jjsaa")
 position = Vector2(660, 296)
 
 [node name="Enemy" parent="." instance=ExtResource("2_l4bj1")]
-position = Vector2(1170, -561)
+position = Vector2(885, -890)

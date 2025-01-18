@@ -20,7 +20,8 @@ func _physics_process(delta):
 		var distance_to_player = position.distance_to(player.position)
 		if distance_to_player > stop_distance:
 			var direction = (player.position - position).normalized()
-			position += direction * plant_speed * delta
+			velocity = direction * plant_speed 
+	move_and_slide()
 
 func _on_detection_roots_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
