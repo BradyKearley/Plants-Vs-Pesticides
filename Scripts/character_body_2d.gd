@@ -6,6 +6,9 @@ const JUMP_VELOCITY = -400.0
 var canDash = true
 var dashSpeed = 1
 var dashCooldown
+func _process(delta: float) -> void:
+	var mouse_position = get_global_mouse_position()
+	look_at(mouse_position)
 func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if dashSpeed > 1:
