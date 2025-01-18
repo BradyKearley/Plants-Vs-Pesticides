@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c30mko8u3mvik"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
-[ext_resource type="Texture2D" uid="uid://b5s73n4bc422" path="res://Assets/ronaldSprite.png" id="2_rb37p"]
+[ext_resource type="Texture2D" uid="uid://bug5run3uk885" path="res://Assets/icon.svg" id="2_ajjbq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjfn4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rb37p")
+"texture": ExtResource("2_ajjbq")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -17,12 +17,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlmwi"]
 size = Vector2(128, 127)
 
-[node name="Ronald" type="CharacterBody2D" groups=["Player"]]
+[node name="Ronald" type="CharacterBody2D"]
 script = ExtResource("1_mdpnj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
-rotation = 3.14159
-scale = Vector2(0.1, 0.1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qjfn4")
 animation = &"new_animation"
 
