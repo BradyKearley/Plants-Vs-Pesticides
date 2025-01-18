@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c30mko8u3mvik"]
+
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
+[ext_resource type="Texture2D" uid="uid://bug5run3uk885" path="res://Assets/icon.svg" id="2_ajjbq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjfn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ajjbq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlmwi"]
+size = Vector2(128, 127)
+
+[node name="Ronald" type="CharacterBody2D"]
+script = ExtResource("1_mdpnj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qjfn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_jlmwi")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
