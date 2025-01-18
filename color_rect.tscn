@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddws1kua8hekc"]
+[gd_scene load_steps=4 format=3 uid="uid://b56o2nbj4crpm"]
 
 [ext_resource type="Texture2D" uid="uid://dlsdbbfrkvx0w" path="res://Assets/New Piskel (4).png" id="1_2kj0e"]
 [ext_resource type="PackedScene" uid="uid://c0vatgxmt1vj5" path="res://wall.tscn" id="2_te0ov"]
-[ext_resource type="PackedScene" uid="uid://bikkc8gpn0fgb" path="res://r_ock.tscn" id="3_tjvev"]
+[ext_resource type="PackedScene" uid="uid://b7rgqwleigmlw" path="res://r_ock.tscn" id="3_tjvev"]
 
 [node name="Background" type="ColorRect"]
 offset_left = -1365.0
