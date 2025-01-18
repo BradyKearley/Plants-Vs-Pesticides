@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://d0v85wvi6ogu6"]
+[gd_scene load_steps=3 format=3 uid="uid://d0v85wvi6ogu6"]
+
+[ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
+[ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
 
 [node name="Main" type="Node"]
-<<<<<<< HEAD
 
 [node name="Ronald" parent="." instance=ExtResource("1_71t18")]
 rotation = 0.0
@@ -9,5 +11,3 @@ scale = Vector2(1, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_l4bj1")]
 position = Vector2(938, -1)
-=======
->>>>>>> 44091966d47240026c1a78ac279921d032dc2578
