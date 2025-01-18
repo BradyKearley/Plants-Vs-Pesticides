@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://donypw6lwipw5"
+=======
+uid="uid://hhrlnuys83nb"
+>>>>>>> 2af4f46025b0a36dc5386591e4903cd068a74efd
 path="res://.godot/imported/cactusSpriteBullet4.png-1e57bb1dbfff34bd517f90b88ec761bd.ctex"
 metadata={
 "vram_texture": false
