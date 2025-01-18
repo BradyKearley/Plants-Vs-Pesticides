@@ -3,14 +3,18 @@
 [ext_resource type="Script" path="res://Scripts/enemy_1.gd" id="1_qes1b"]
 [ext_resource type="Texture2D" uid="uid://bxfxd8id4qa8w" path="res://Assets/flowerSpritePack/flowerSprite0.png" id="2_gbj00"]
 [ext_resource type="Texture2D" uid="uid://cps2cpvka2vdu" path="res://Assets/flowerSpritePack/flowerSprite1.png" id="3_4ly5y"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://36ikvexbvuf8" path="res://Assets/healthBar2.png" id="4_5vx0h"]
+=======
+[ext_resource type="Texture2D" uid="uid://j3q0flbfan8p" path="res://Assets/healthBar2.png" id="4_5vx0h"]
+>>>>>>> f7f188432216529a01592353ea118e2c01623536
 [ext_resource type="Script" path="res://Scenes/health_bar.gd" id="5_6tkaq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3vq4"]
 radius = 667.68
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3h1cc"]
-size = Vector2(62, 132)
+size = Vector2(58, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edwp8"]
 size = Vector2(73, 139)
@@ -37,8 +41,8 @@ script = ExtResource("1_qes1b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
 shape = SubResource("CircleShape2D_b3vq4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(0, -14)
+[node name="body" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_3h1cc")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
