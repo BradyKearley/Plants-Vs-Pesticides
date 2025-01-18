@@ -6,7 +6,28 @@ var player: Node2D = null
 var stop_distance = 100  # Minimum distance to stop moving
 var health = 100
 var stunnded = false
+var rotation_speed = 360  
+var target_rotation = 0.0  
+var spinning = false    
+
+func spin_360():
+	if spinning:
+		return  # Prevent triggering another spin while already spinning
+	spinning = true
+	target_rotation = rotation + deg_to_rad(360)
+func _process(delta: float) -> void:
+	if spinning:
+		# Incrementally rotate the sprite
+		var step = rotation_speed * delta
+		rotation += deg_to_rad(step)
+
+		# Check if the target rotation is reached
+		if rotation >= target_rotation:
+			rotation = target_rotation  # Snap to the target rotation
+			spinning = false  # Stop spinning
+
 func _ready() -> void:
+	$StunTimer.stop()
 	$AnimatedSprite2D.play("idle")
 func _physics_process(delta):
 	if player_detected and player and not stunnded:
@@ -33,6 +54,7 @@ func hit():
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	$StunTimer.start()
+	spin_360()
 	stunnded = true
 
 
