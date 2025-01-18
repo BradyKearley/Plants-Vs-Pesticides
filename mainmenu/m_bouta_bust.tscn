@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://kdv6ew6cis1x"]
+
+[ext_resource type="Script" path="res://Scenes/spike_lee.gd" id="1_u6no5"]
+[ext_resource type="PackedScene" path="res://Scenes/cactus_bullet.tscn" id="2_pqg4h"]
+[ext_resource type="Texture2D" uid="uid://cybw4w1uvxjt7" path="res://Assets/cactusSpritePack/cactusSprite0.png" id="3_k4r05"]
+[ext_resource type="Texture2D" uid="uid://t5o234jyri8p" path="res://Assets/cactusSpritePack/cactusSprite1.png" id="4_e6xdh"]
+[ext_resource type="Texture2D" uid="uid://bao7jlulr3cxr" path="res://Assets/cactusSpritePack/cactusSprite2.png" id="5_v01tl"]
+[ext_resource type="Texture2D" uid="uid://bkn5pw7sxhfkp" path="res://Assets/cactusSpritePack/cactusSprite3.png" id="6_kuvey"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b42to"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k4r05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e6xdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v01tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kuvey")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqb2b"]
+radius = 667.68
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sdt"]
+size = Vector2(62, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yowvp"]
+size = Vector2(73, 139)
+
+[node name="mBoutaBust" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_u6no5")
+spike = ExtResource("2_pqg4h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+scale = Vector2(0.13, 0.13)
+sprite_frames = SubResource("SpriteFrames_b42to")
+animation = &"idle"
+
+[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
+shape = SubResource("CircleShape2D_nqb2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_n3sdt")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["enemy"]]
+position = Vector2(1.5, -13.5)
+shape = SubResource("RectangleShape2D_yowvp")
+
+[node name="StunTimer" type="Timer" parent="."]
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Detection Roots" to="." method="_on_detection_roots_body_entered"]
+[connection signal="body_exited" from="Detection Roots" to="." method="_on_detection_roots_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
