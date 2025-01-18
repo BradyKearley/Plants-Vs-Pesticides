@@ -1,10 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
+=======
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
 [ext_resource type="Texture2D" uid="uid://ckc83ybfbwa6t" path="res://Assets/dashSpritePack/dashSprite0.png" id="3_5heyo"]
 [ext_resource type="PackedScene" uid="uid://bscur1ynoyaa3" path="res://Scenes/level_1.tscn" id="3_pplsb"]
 [ext_resource type="PackedScene" uid="uid://m0g4yl3oryg3" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://ba3jxk4c6u0k2" path="res://Assets/dashSpritePack/dashSprite1.png" id="4_p2wie"]
 [ext_resource type="Script" path="res://Scenes/canvas_layer.gd" id="5_eeirm"]
 
@@ -26,6 +30,9 @@ animations = [{
 "name": &"Red",
 "speed": 5.0
 }]
+=======
+>>>>>>> f174749df8c9cd02a2fccbc4a5c17bd2ff50cc29
+>>>>>>> 0813d37f7804bf520f1bb048d31ef8651596152e
 
 [node name="Main" type="Node"]
 
