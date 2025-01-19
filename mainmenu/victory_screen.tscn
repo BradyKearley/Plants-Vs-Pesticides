@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bikjpfjw6xsjj"]
+[gd_scene load_steps=5 format=3 uid="uid://bikjpfjw6xsjj"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_f5w07"]
 [ext_resource type="Texture2D" uid="uid://xip1cgeh0aug" path="res://Scenes/DALLE_2025-01-18_23.50.04_-_A_pixel_art_scene_of_an_alien_environment_featuring_glowing_bioluminescent_plants_with_a_balanced_mix_of_purple_green_and_blue_hues._The_design_show.webp" id="2_karcy"]
 [ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="3_n1618"]
+[ext_resource type="AudioStream" uid="uid://c1puac4y4ebf0" path="res://Assets/gameMusic1.mp3" id="4_bhwih"]
 
 [node name="Victory_Screen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,7 +55,9 @@ text = "      Victory"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_n1618")
 theme_override_font_sizes/font_size = 150
-text = "            Score: 0"
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -66,3 +70,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_n1618")
 theme_override_font_sizes/font_size = 150
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bhwih")
+pitch_scale = 1.2
