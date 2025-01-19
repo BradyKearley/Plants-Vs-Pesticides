@@ -92,9 +92,12 @@ autoplay = true
 stream = ExtResource("6_3s01t")
 volume_db = -12.0
 
+[node name="InvinciblityTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="area_entered" from="BoundingBox" to="." method="_on_bounding_box_area_entered"]
 [connection signal="body_entered" from="BoundingBox" to="." method="_on_bounding_box_body_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
+[connection signal="timeout" from="InvinciblityTimer" to="." method="_on_invinciblity_timer_timeout"]

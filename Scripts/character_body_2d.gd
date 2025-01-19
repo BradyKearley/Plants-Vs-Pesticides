@@ -7,7 +7,7 @@ var canShoot = true
 var dashSpeed = 1
 var dashCooldown
 var health = 100
-
+var invincible = false
 var inBossRange = false
 @onready var background_music = $AudioStreamPlayer2D
 @onready var boss_music = $AudioStreamPlayer2D2
@@ -35,6 +35,8 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("ui_accept") and canDash:
 		dashSpeed = 6
+		invincible = true
+		$InvinciblityTimer.start()
 		$DashSound.play()
 		canDash = false
 		$DashTimer.start()
@@ -82,7 +84,7 @@ func _on_bounding_box_area_entered(area: Area2D) -> void:
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemy"):
+	if area.is_in_group("enemy") and invincible == false:
 		health -= 5
 	if area.is_in_group("Tree"):
 		inBossRange = true
@@ -104,3 +106,7 @@ func switch_to_background_music():
 	if boss_music.playing:
 		boss_music.stop()
 	background_music.play()
+
+
+func _on_invinciblity_timer_timeout() -> void:
+	invincible = false
