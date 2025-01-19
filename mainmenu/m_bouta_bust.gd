@@ -5,7 +5,7 @@ var player_detected = false
 var player: Node2D = null
 var stop_distance = 100  # Minimum distance to stop moving
 var health = 25
-const maxHealth = 100
+const maxHealth = 25
 var stunnded = false
 var rotation_speed = 360  
 var target_rotation = 0.0  
@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if player_detected and player and not stunnded:
 		var distance_to_player = position.distance_to(player.position)
 		if distance_to_player > stop_distance:
-			var direction = (player.position - position).normalized()
+			var direction = (player.global_position - global_position).normalized()
 			velocity = direction * plant_speed
 		else:
 			velocity = Vector2.ZERO  # Stop movement when within stop distance
