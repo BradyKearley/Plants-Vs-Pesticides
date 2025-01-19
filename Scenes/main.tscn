@@ -38,7 +38,6 @@ animations = [{
 scale = Vector2(10, 10)
 
 [node name="Ronald" parent="." instance=ExtResource("1_71t18")]
-position = Vector2(5500, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
@@ -65,15 +64,31 @@ texture_progress = ExtResource("6_jjsaa")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Ronald"]
 stream = ExtResource("10_1702s")
+volume_db = -12.0
+autoplay = true
+
+[node name="Spike Lee" parent="Ronald/AudioStreamPlayer2D" instance=ExtResource("4_mdr4i")]
+position = Vector2(5210, 430)
+
+[node name="mBoutaBust" parent="Ronald/AudioStreamPlayer2D/Spike Lee" instance=ExtResource("9_m4pex")]
 
 [node name="Spike Lee" parent="." instance=ExtResource("4_mdr4i")]
-position = Vector2(660, 296)
+position = Vector2(1747, -844)
 
 [node name="Enemy" parent="." instance=ExtResource("2_l4bj1")]
-position = Vector2(885, -890)
+position = Vector2(2297, 1)
 
 [node name="mBoutaBust" parent="." instance=ExtResource("9_m4pex")]
-position = Vector2(183, -307)
+position = Vector2(1463, -2157)
 
 [node name="Tree" parent="." instance=ExtResource("11_wfdjn")]
 position = Vector2(11455, 1467)
+
+[node name="mBoutaBust2" parent="." instance=ExtResource("9_m4pex")]
+position = Vector2(2451, -2621)
+
+[node name="mBoutaBust3" parent="." instance=ExtResource("9_m4pex")]
+position = Vector2(5031, -2122)
+
+[node name="Spike Lee2" parent="." instance=ExtResource("4_mdr4i")]
+position = Vector2(5923, -973)
