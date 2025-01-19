@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_dash_timer_timeout() -> void:
 	canDash = true
+	$DashRechargeSound.play()
 	$DashTimer.stop()
 func reduceDashCooldown(reduction:int):
 	$DashTimer.wait_time -=reduction
