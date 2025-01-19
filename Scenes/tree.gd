@@ -8,6 +8,8 @@ var stop_distance = 100
 var health = 1000
 const maxHealth = 1000
 var phase = 1
+
+signal TreeDie
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 	$AttackTimer.start()
@@ -26,6 +28,7 @@ func _on_detection_roots_body_exited(body: Node2D) -> void:
 func hit():
 	health -= 25
 	if health <= 0:
+		TreeDie.emit()
 		queue_free()
 	if health < 500 and phase == 1:
 		$AnimatedSprite2D.play("Phase2")
