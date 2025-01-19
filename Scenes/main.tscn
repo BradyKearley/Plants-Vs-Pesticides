@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0v85wvi6ogu6"]
+[gd_scene load_steps=19 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scenes/audio_stream_player_2d.gd" id="11_kr6um"]
 [ext_resource type="PackedScene" uid="uid://kj3wr8uh8hdb" path="res://Scenes/tree.tscn" id="11_wfdjn"]
 [ext_resource type="AudioStream" uid="uid://8v6j7mwiiuyy" path="res://Assets/bossTheme.mp3" id="12_0d4qc"]
+[ext_resource type="PackedScene" uid="uid://3yldrys8afeh" path="res://powerupSeed.tscn" id="17_i2sd0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvdop"]
 animations = [{
@@ -110,5 +111,20 @@ position = Vector2(5210, 430)
 
 [node name="mBoutaBust4" parent="." instance=ExtResource("9_m4pex")]
 position = Vector2(5210, 430)
+
+[node name="mBoutaBust5" parent="." instance=ExtResource("9_m4pex")]
+position = Vector2(3181, 352)
+
+[node name="Area2D" parent="." instance=ExtResource("17_i2sd0")]
+position = Vector2(3784, -588)
+
+[node name="Area2D2" parent="." instance=ExtResource("17_i2sd0")]
+position = Vector2(6913, -2410)
+
+[node name="Area2D3" parent="." instance=ExtResource("17_i2sd0")]
+position = Vector2(5043, 669)
+
+[node name="Area2D4" parent="." instance=ExtResource("17_i2sd0")]
+position = Vector2(2865, -3017)
 
 [connection signal="timeout" from="Ronald/CanvasLayer/Time/GameTime" to="Ronald/CanvasLayer/Time" method="_on_game_time_timeout"]
