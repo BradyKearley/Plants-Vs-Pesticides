@@ -2,11 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-<<<<<<< HEAD
 uid="uid://8v6j7mwiiuyy"
-=======
-uid="uid://4cba2x7outn4"
->>>>>>> 05e6f708dadfc27c43910bc6bdc3b37c47462a9e
 path="res://.godot/imported/bossTheme.mp3-28cb187863e751609df57c7414cd878f.mp3str"
 
 [deps]

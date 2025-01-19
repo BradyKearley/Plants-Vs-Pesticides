@@ -1,14 +1,12 @@
 extends CharacterBody2D
 @export var bulletScene: PackedScene
-var SPEED = 600.0
+const SPEED = 600.0
 const JUMP_VELOCITY = -400.0
 var canDash = true
 var canShoot = true
 var dashSpeed = 1
 var dashCooldown
 var health = 100
-var rng = RandomNumberGenerator.new()
-var my_random_number = null
 
 var inBossRange = false
 @onready var background_music = $AudioStreamPlayer2D
@@ -86,7 +84,6 @@ func _on_bounding_box_area_entered(area: Area2D) -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		health -= 5
-<<<<<<< HEAD
 	if area.is_in_group("Tree"):
 		inBossRange = true
 		switch_to_boss_music()
@@ -107,22 +104,3 @@ func switch_to_background_music():
 	if boss_music.playing:
 		boss_music.stop()
 	background_music.play()
-=======
-	elif area.is_in_group("powerUp"):
-		my_random_number = rng.randf_range(0, 4)
-		print(my_random_number)
-		if my_random_number <= 1:
-			health += 10
-			print('h')
-			if health > 100:
-				health = 100
-		elif my_random_number <= 2 && my_random_number > 1:
-			SPEED += 100
-			print('s')
-		elif my_random_number <= 3 && my_random_number > 2:
-			$ShootTimer.wait_time -= 0.5
-			print('fr')
-		elif my_random_number <= 4 && my_random_number > 3:
-			$DashTimer.wait_time -= 0.5
-			print('ds')
->>>>>>> 05e6f708dadfc27c43910bc6bdc3b37c47462a9e

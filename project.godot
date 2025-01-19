@@ -26,12 +26,8 @@ window/stretch/mode="viewport"
 enemy=""
 Bullet=""
 Player=""
-<<<<<<< HEAD
 BossMusic=""
 Tree=""
-=======
-powerUps=""
->>>>>>> 05e6f708dadfc27c43910bc6bdc3b37c47462a9e
 
 [input]
 
