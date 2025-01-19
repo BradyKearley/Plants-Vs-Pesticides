@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://crvtnlu8onmb4"]
+[gd_scene load_steps=14 format=3 uid="uid://crvtnlu8onmb4"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
 [ext_resource type="Texture2D" uid="uid://d3tdmf5lx8qt7" path="res://Assets/playerSpritePack/playerSprite0.png" id="2_qj5le"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dnkbcbxcu6au2" path="res://Assets/playerSpritePack/playerSprite1.png" id="3_y88xg"]
 [ext_resource type="AudioStream" uid="uid://lujttmel0jpw" path="res://dashSound.mp3" id="5_tlu8i"]
 [ext_resource type="AudioStream" uid="uid://cctvva8ilt1mi" path="res://shootNoise.mp3" id="6_3s01t"]
+[ext_resource type="AudioStream" uid="uid://d2bi8fllx4bg3" path="res://Assets/rechargeSound.mp3" id="7_v8pae"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjfn4"]
 animations = [{
@@ -95,8 +96,8 @@ volume_db = -6.0
 [node name="InvinciblityTimer" type="Timer" parent="."]
 
 [node name="DashRechargeSound" type="AudioStreamPlayer2D" parent="."]
-scale = Vector2(1, 1)
-stream = ExtResource("5_tlu8i")
+stream = ExtResource("7_v8pae")
+pitch_scale = 1.5
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
