@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7bt0"]
 size = Vector2(44, 53)
 
-[node name="m_bouta_bust_bullet" type="Area2D" groups=["enemy"]]
+[node name="TreeBullet" type="Area2D" groups=["Bullet"]]
 script = ExtResource("1_k4mx6")
 
 [node name="PineconeSpriteProjectile" type="Sprite2D" parent="."]

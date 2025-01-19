@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nqb2b"]
-radius = 667.68
+radius = 2377.64
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sdt"]
 size = Vector2(62, 132)
@@ -58,9 +58,9 @@ scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_b42to")
 animation = &"idle"
 
-[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
+[node name="Detection Roots" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
 shape = SubResource("CircleShape2D_nqb2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]

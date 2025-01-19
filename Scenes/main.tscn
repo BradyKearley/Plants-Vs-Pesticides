@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0v85wvi6ogu6"]
+[gd_scene load_steps=13 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://on6v77gtb67i" path="res://Assets/healthBar.png" id="6_jjsaa"]
 [ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="9_m4pex"]
 [ext_resource type="AudioStream" uid="uid://ddwl56aoy702x" path="res://Assets/gameMusic1.mp3" id="10_1702s"]
+[ext_resource type="PackedScene" uid="uid://kj3wr8uh8hdb" path="res://Scenes/tree.tscn" id="11_wfdjn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvdop"]
 animations = [{
@@ -71,3 +72,6 @@ position = Vector2(885, -890)
 
 [node name="mBoutaBust" parent="." instance=ExtResource("9_m4pex")]
 position = Vector2(183, -307)
+
+[node name="Tree" parent="." instance=ExtResource("11_wfdjn")]
+position = Vector2(4536, -2152)
