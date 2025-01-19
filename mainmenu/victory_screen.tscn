@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bikjpfjw6xsjj"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_f5w07"]
+[ext_resource type="Texture2D" uid="uid://xip1cgeh0aug" path="res://Scenes/DALLE_2025-01-18_23.50.04_-_A_pixel_art_scene_of_an_alien_environment_featuring_glowing_bioluminescent_plants_with_a_balanced_mix_of_purple_green_and_blue_hues._The_design_show.webp" id="2_karcy"]
+[ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="3_n1618"]
+
+[node name="Victory_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f5w07")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(966, 540.5)
+scale = Vector2(1.88086, 1.05566)
+texture = ExtResource("2_karcy")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -529.5
+offset_top = -347.0
+offset_right = 529.5
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n1618")
+theme_override_font_sizes/font_size = 200
+text = "      Victory"
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n1618")
+theme_override_font_sizes/font_size = 150
+text = "            Score: 0"
+
+[node name="MainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n1618")
+theme_override_font_sizes/font_size = 150
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n1618")
+theme_override_font_sizes/font_size = 150
+text = "Quit"
