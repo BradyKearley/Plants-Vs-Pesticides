@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5qgahbg6k1wj" path="res://Assets/Background/ground&water.png" id="1_lkom7"]
 [ext_resource type="PackedScene" uid="uid://b7rgqwleigmlw" path="res://Scenes/r_ock.tscn" id="2_qdww8"]
-[ext_resource type="PackedScene" uid="uid://brn1bjw4odhxs" path="res://Scenes/treeOne.tscn" id="3_lv8gc"]
+[ext_resource type="PackedScene" path="res://Scenes/treeOne.tscn" id="3_lv8gc"]
 [ext_resource type="PackedScene" uid="uid://7ws6ms5iwvj3" path="res://r_ock.tscn" id="3_xpd6d"]
 [ext_resource type="PackedScene" uid="uid://c3ix2rlb702f2" path="res://bush.tscn" id="4_i5o8l"]
 

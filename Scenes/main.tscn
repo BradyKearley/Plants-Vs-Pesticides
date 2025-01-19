@@ -37,6 +37,7 @@ animations = [{
 scale = Vector2(10, 10)
 
 [node name="Ronald" parent="." instance=ExtResource("1_71t18")]
+position = Vector2(5500, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
@@ -74,4 +75,4 @@ position = Vector2(885, -890)
 position = Vector2(183, -307)
 
 [node name="Tree" parent="." instance=ExtResource("11_wfdjn")]
-position = Vector2(4536, -2152)
+position = Vector2(11455, 1467)
