@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crvtnlu8onmb4"]
+[gd_scene load_steps=16 format=3 uid="uid://crvtnlu8onmb4"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
 [ext_resource type="Texture2D" uid="uid://d3tdmf5lx8qt7" path="res://Assets/playerSpritePack/playerSprite0.png" id="2_qj5le"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://lujttmel0jpw" path="res://dashSound.mp3" id="5_tlu8i"]
 [ext_resource type="AudioStream" uid="uid://cctvva8ilt1mi" path="res://shootNoise.mp3" id="6_3s01t"]
 [ext_resource type="AudioStream" uid="uid://d2bi8fllx4bg3" path="res://Assets/rechargeSound.mp3" id="7_v8pae"]
+[ext_resource type="Script" path="res://Scenes/power_up_label.gd" id="8_mei5m"]
+[ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="8_rjxhg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjfn4"]
 animations = [{
@@ -50,7 +52,7 @@ sprite_frames = SubResource("SpriteFrames_qjfn4")
 animation = &"Idle"
 frame_progress = 0.238094
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="mmmmmmmm" type="CollisionShape2D" parent="."]
 position = Vector2(-4.76837e-07, -1.81899e-12)
 shape = SubResource("CircleShape2D_oa8gc")
 
@@ -99,6 +101,26 @@ volume_db = -6.0
 stream = ExtResource("7_v8pae")
 pitch_scale = 1.5
 
+[node name="RegenTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="RedFlashTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="PowerUpTimer" type="Timer" parent="."]
+
+[node name="PowerUpLabel" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 479.0
+offset_bottom = 241.0
+rotation = 3.14159
+theme_override_fonts/font = ExtResource("8_rjxhg")
+theme_override_font_sizes/font_size = 80
+text = "+ 150 Speed"
+script = ExtResource("8_mei5m")
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="area_entered" from="BoundingBox" to="." method="_on_bounding_box_area_entered"]
@@ -106,3 +128,6 @@ pitch_scale = 1.5
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
 [connection signal="timeout" from="InvinciblityTimer" to="." method="_on_invinciblity_timer_timeout"]
+[connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
+[connection signal="timeout" from="RedFlashTimer" to="." method="_on_red_flash_timer_timeout"]
+[connection signal="timeout" from="PowerUpTimer" to="." method="_on_power_up_timer_timeout"]

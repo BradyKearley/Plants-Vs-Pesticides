@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	
 	var mouse_position = get_global_mouse_position()
 	look_at(mouse_position)
-	if Input.is_action_just_pressed("Shoot"):
+	if Input.is_action_pressed("Shoot"):
 		shoot()
 func _physics_process(delta: float) -> void:
 	# Handle jump.
@@ -89,6 +89,8 @@ func _on_bounding_box_area_entered(area: Area2D) -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy") and invincible == false:
 		health -= 5
+		modulate = Color(255,0,0)
+		$RedFlashTimer.start()
 	if area.is_in_group("Tree"):
 		inBossRange = true
 		switch_to_boss_music()
@@ -96,18 +98,31 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		my_random_number = rng.randf_range(0, 4)
 		print(my_random_number)
 		if my_random_number <= 1:
-			health += 10
+			health += 15
 			print('hp')
+			$PowerUpLabel.text = "15% Heal!"
+			$PowerUpLabel.show()
+			$PowerUpTimer.start()
 			if health > 100:
 				health = 100
+				
 		elif my_random_number <= 2 && my_random_number > 1:
-			SPEED += 200
+			SPEED += 150
+			$PowerUpLabel.text = "+150 Speed!"
+			$PowerUpLabel.show()
+			$PowerUpTimer.start()
 			print('sp')
 		elif my_random_number <= 3 && my_random_number > 2:
 			$ShootTimer.wait_time -= 0.5
+			$PowerUpLabel.text = "Fire Rate Up!"
+			$PowerUpLabel.show()
+			$PowerUpTimer.start()
 			print('st')
 		elif my_random_number <= 4 && my_random_number > 3:
 			$DashTimer.wait_time -= 0.5
+			$PowerUpLabel.text = "Dash Faster!"
+			$PowerUpLabel.show()
+			$PowerUpTimer.start()
 			print('ds')
 
 
@@ -129,3 +144,16 @@ func switch_to_background_music():
 
 func _on_invinciblity_timer_timeout() -> void:
 	invincible = false
+
+
+func _on_regen_timer_timeout() -> void:
+	health +=1
+
+
+func _on_red_flash_timer_timeout() -> void:
+	modulate = Color(1,1,1)
+	$RedFlashTimer.stop()
+
+
+func _on_power_up_timer_timeout() -> void:
+	$PowerUpLabel.hide()

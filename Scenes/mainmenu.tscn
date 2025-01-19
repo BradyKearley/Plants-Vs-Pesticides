@@ -57,7 +57,7 @@ theme_override_constants/shadow_offset_y = 12
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("4_n7esa")
 theme_override_font_sizes/font_size = 100
-text = "Plants V.S Pestisides"
+text = "Plants V.S Pesticides"
 horizontal_alignment = 1
 vertical_alignment = 1
 
