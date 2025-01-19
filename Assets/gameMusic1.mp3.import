@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://blufh3nw6sne8"
+=======
+uid="uid://qkrg18ithlk7"
+>>>>>>> 6f74b5e43064a5d54a8a1592cd5f024a94fc31b6
 path="res://.godot/imported/gameMusic1.mp3-561926a2018a38e1f7a72148aa12bd9c.mp3str"
 
 [deps]
