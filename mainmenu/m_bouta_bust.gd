@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if player_detected and player and not stunnded:
 		var distance_to_player = position.distance_to(player.position)
 		if distance_to_player > stop_distance:
-			var direction = (player.position - position).normalized()
+			var direction = (player.global_position - global_position).normalized()
 			velocity = direction * plant_speed
 		else:
 			velocity = Vector2.ZERO  # Stop movement when within stop distance

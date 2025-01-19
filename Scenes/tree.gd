@@ -29,7 +29,7 @@ func hit():
 func spawn():
 	var busterBus = MrBust.instantiate()
 	add_child(busterBus)
-	busterBus.global_position = global_position
+	busterBus.global_position = global_position + Vector2(randi_range(-100,25),randi_range(-25,25))
 	
 func shoot():
 		# Define the starting angle (in radians)
