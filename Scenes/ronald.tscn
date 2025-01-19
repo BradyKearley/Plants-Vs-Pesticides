@@ -89,8 +89,11 @@ pitch_scale = 2.11
 autoplay = true
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+<<<<<<< HEAD
 stream = ExtResource("6_3s01t")
 volume_db = -12.0
+=======
+>>>>>>> 8641ff15e3ca1e6f1d03f1c58a328a0d1308f927
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
