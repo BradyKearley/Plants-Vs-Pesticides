@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://Scenes/time.gd" id="8_uclqb"]
 [ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="9_m4pex"]
 [ext_resource type="AudioStream" uid="uid://c1puac4y4ebf0" path="res://Assets/gameMusic1.mp3" id="10_1702s"]
-[ext_resource type="PackedScene" uid="uid://bikjpfjw6xsjj" path="res://mainmenu/victory_screen.tscn" id="10_h4e3p"]
+[ext_resource type="PackedScene" path="res://mainmenu/victory_screen.tscn" id="10_h4e3p"]
 [ext_resource type="Script" path="res://Scenes/audio_stream_player_2d.gd" id="11_kr6um"]
 [ext_resource type="PackedScene" uid="uid://kj3wr8uh8hdb" path="res://Scenes/tree.tscn" id="11_wfdjn"]
 [ext_resource type="AudioStream" uid="uid://8v6j7mwiiuyy" path="res://Assets/bossTheme.mp3" id="12_0d4qc"]
@@ -91,6 +91,9 @@ stream = ExtResource("12_0d4qc")
 [node name="Spike Lee" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(1747, -844)
 
+[node name="Enemy2" parent="." instance=ExtResource("2_l4bj1")]
+position = Vector2(4074, 434)
+
 [node name="Enemy" parent="." instance=ExtResource("2_l4bj1")]
 position = Vector2(2297, 1)
 
@@ -118,17 +121,29 @@ position = Vector2(5210, 430)
 [node name="mBoutaBust5" parent="." instance=ExtResource("9_m4pex")]
 position = Vector2(3181, 352)
 
-[node name="Area2D" parent="." instance=ExtResource("17_i2sd0")]
+[node name="power6" parent="." instance=ExtResource("17_i2sd0")]
+position = Vector2(328, -223)
+scale = Vector2(3, 3)
+
+[node name="power5" parent="." instance=ExtResource("17_i2sd0")]
+position = Vector2(107, -211)
+scale = Vector2(3, 3)
+
+[node name="power1" parent="." instance=ExtResource("17_i2sd0")]
 position = Vector2(3784, -588)
+scale = Vector2(3, 3)
 
-[node name="Area2D2" parent="." instance=ExtResource("17_i2sd0")]
+[node name="power2" parent="." instance=ExtResource("17_i2sd0")]
 position = Vector2(6913, -2410)
+scale = Vector2(3, 3)
 
-[node name="Area2D3" parent="." instance=ExtResource("17_i2sd0")]
+[node name="power3" parent="." instance=ExtResource("17_i2sd0")]
 position = Vector2(5043, 669)
+scale = Vector2(3, 3)
 
-[node name="Area2D4" parent="." instance=ExtResource("17_i2sd0")]
-position = Vector2(2865, -3017)
+[node name="power4" parent="." instance=ExtResource("17_i2sd0")]
+position = Vector2(2863, -3029)
+scale = Vector2(3, 3)
 
 [connection signal="timeout" from="Ronald/CanvasLayer/Time/GameTime" to="Ronald/CanvasLayer/Time" method="_on_game_time_timeout"]
 [connection signal="TreeDie" from="Tree" to="Ronald/CanvasLayer/Victory_Screen" method="_on_tree_tree_die"]

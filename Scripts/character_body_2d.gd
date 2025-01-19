@@ -97,14 +97,18 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		print(my_random_number)
 		if my_random_number <= 1:
 			health += 10
+			print('hp')
 			if health > 100:
 				health = 100
 		elif my_random_number <= 2 && my_random_number > 1:
-			SPEED += 100
-		elif my_random_number <= 2 && my_random_number > 1:
-			$ShootTimer.wait_timer -= 0.5
-		elif my_random_number <= 2 && my_random_number > 1:
-			$DashTimer.wait_timer -= 0.5
+			SPEED += 200
+			print('sp')
+		elif my_random_number <= 3 && my_random_number > 2:
+			$ShootTimer.wait_time -= 0.5
+			print('st')
+		elif my_random_number <= 4 && my_random_number > 3:
+			$DashTimer.wait_time -= 0.5
+			print('ds')
 
 
 func _on_hitbox_area_exited(area: Area2D) -> void:
