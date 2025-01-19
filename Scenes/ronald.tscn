@@ -36,7 +36,7 @@ size = Vector2(510.01, 12820)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jaky4"]
 radius = 50.0
 
-[node name="Ronald" type="CharacterBody2D" groups=["Player"]]
+[node name="Ronald" type="CharacterBody2D" groups=["Player", "powerUps"]]
 rotation = 3.14159
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_mdpnj")
