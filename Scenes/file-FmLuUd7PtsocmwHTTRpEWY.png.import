@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cux7i5fxlawp5"
-path="res://.godot/imported/treeBranch3.png-fc8f8e3b253e7e76a2f62af7eced15f8.ctex"
+uid="uid://cymbvj7i0b2yx"
+path="res://.godot/imported/file-FmLuUd7PtsocmwHTTRpEWY.png-353019ed0f23ed9fc97b39eb5bf0b9b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/treeSpritePack/treeBranch3.png"
-dest_files=["res://.godot/imported/treeBranch3.png-fc8f8e3b253e7e76a2f62af7eced15f8.ctex"]
+source_file="res://Scenes/file-FmLuUd7PtsocmwHTTRpEWY.png"
+dest_files=["res://.godot/imported/file-FmLuUd7PtsocmwHTTRpEWY.png-353019ed0f23ed9fc97b39eb5bf0b9b7.ctex"]
 
 [params]
 

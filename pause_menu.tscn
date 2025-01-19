@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://daslf0513pxrj"]
+[gd_scene load_steps=5 format=3 uid="uid://daslf0513pxrj"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_j2yvu"]
+[ext_resource type="Texture2D" uid="uid://cymbvj7i0b2yx" path="res://Scenes/file-FmLuUd7PtsocmwHTTRpEWY.png" id="2_gu2ki"]
+[ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="3_tje62"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4bufw"]
 
@@ -23,6 +25,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(967, 547)
+scale = Vector2(1.89453, 1.06641)
+texture = ExtResource("2_gu2ki")
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -40,17 +47,20 @@ layout_mode = 2
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("3_tje62")
+theme_override_font_sizes/font_size = 140
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("3_tje62")
+theme_override_font_sizes/font_size = 140
 text = "Restart"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("3_tje62")
+theme_override_font_sizes/font_size = 140
 text = "Quit"
 
 [connection signal="button_down" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
