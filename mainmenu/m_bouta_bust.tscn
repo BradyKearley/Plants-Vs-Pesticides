@@ -47,10 +47,10 @@ animations = [{
 radius = 3470.38
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3sdt"]
-size = Vector2(62, 132)
+size = Vector2(62, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowvp"]
-size = Vector2(73, 139)
+size = Vector2(68, 117.5)
 
 [node name="mBoutaBust" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_yiymd")
@@ -65,14 +65,14 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots"]
 shape = SubResource("CircleShape2D_nqb2b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(0, -14)
+[node name="CollisionBody" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_n3sdt")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["enemy"]]
-position = Vector2(1.5, -13.5)
+[node name="hitbox" type="CollisionShape2D" parent="Hitbox" groups=["enemy"]]
+position = Vector2(0, -11.25)
 shape = SubResource("RectangleShape2D_yowvp")
 
 [node name="StunTimer" type="Timer" parent="."]
