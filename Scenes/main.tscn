@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=18 format=3 uid="uid://d0v85wvi6ogu6"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://d0v85wvi6ogu6"]
+>>>>>>> 05e6f708dadfc27c43910bc6bdc3b37c47462a9e
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
@@ -15,7 +19,11 @@
 [ext_resource type="AudioStream" uid="uid://c1puac4y4ebf0" path="res://Assets/gameMusic1.mp3" id="10_1702s"]
 [ext_resource type="Script" path="res://Scenes/audio_stream_player_2d.gd" id="11_kr6um"]
 [ext_resource type="PackedScene" uid="uid://kj3wr8uh8hdb" path="res://Scenes/tree.tscn" id="11_wfdjn"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://8v6j7mwiiuyy" path="res://Assets/bossTheme.mp3" id="12_0d4qc"]
+=======
+[ext_resource type="PackedScene" uid="uid://3yldrys8afeh" path="res://powerupSeed.tscn" id="15_57dxw"]
+>>>>>>> 05e6f708dadfc27c43910bc6bdc3b37c47462a9e
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvdop"]
 animations = [{
@@ -105,10 +113,28 @@ position = Vector2(5031, -2122)
 [node name="Spike Lee2" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(5923, -973)
 
+<<<<<<< HEAD
 [node name="Spike Lee3" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(5210, 430)
 
 [node name="mBoutaBust4" parent="." instance=ExtResource("9_m4pex")]
 position = Vector2(5210, 430)
+=======
+[node name="seed4" parent="." instance=ExtResource("15_57dxw")]
+position = Vector2(3155, 586)
+scale = Vector2(3, 3)
+
+[node name="seed3" parent="." instance=ExtResource("15_57dxw")]
+position = Vector2(2866, -3073)
+scale = Vector2(3, 3)
+
+[node name="seed2" parent="." instance=ExtResource("15_57dxw")]
+position = Vector2(7111, -2413)
+scale = Vector2(3, 3)
+
+[node name="seed" parent="." instance=ExtResource("15_57dxw")]
+position = Vector2(799, -232)
+scale = Vector2(3, 3)
+>>>>>>> 05e6f708dadfc27c43910bc6bdc3b37c47462a9e
 
 [connection signal="timeout" from="Ronald/CanvasLayer/Time/GameTime" to="Ronald/CanvasLayer/Time" method="_on_game_time_timeout"]
