@@ -29,7 +29,8 @@ func _physics_process(delta: float) -> void:
 		$CanvasLayer/Dash.play("Red")
 		
 	if Input.is_action_just_pressed("ui_accept") and canDash:
-		dashSpeed = 4
+		dashSpeed = 6
+		$DashSound.play()
 		canDash = false
 		$DashTimer.start()
 	var direction := Vector2(

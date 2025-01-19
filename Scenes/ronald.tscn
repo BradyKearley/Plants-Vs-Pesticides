@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://crvtnlu8onmb4"]
+[gd_scene load_steps=12 format=3 uid="uid://crvtnlu8onmb4"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_mdpnj"]
 [ext_resource type="Texture2D" uid="uid://d3tdmf5lx8qt7" path="res://Assets/playerSpritePack/playerSprite0.png" id="2_qj5le"]
 [ext_resource type="PackedScene" uid="uid://cds8aukk81iw3" path="res://Scenes/bullet.tscn" id="2_yxbem"]
 [ext_resource type="Texture2D" uid="uid://dnkbcbxcu6au2" path="res://Assets/playerSpritePack/playerSprite1.png" id="3_y88xg"]
+[ext_resource type="AudioStream" uid="uid://lujttmel0jpw" path="res://dashSound.mp3" id="5_tlu8i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjfn4"]
 animations = [{
@@ -79,6 +80,15 @@ shape = SubResource("RectangleShape2D_viwf3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-1.81899e-12, -9.53674e-07)
 shape = SubResource("CircleShape2D_jaky4")
+
+[node name="DashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tlu8i")
+volume_db = 12.0
+pitch_scale = 2.11
+autoplay = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 1)
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

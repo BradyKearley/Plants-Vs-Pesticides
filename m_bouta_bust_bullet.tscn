@@ -6,10 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7bt0"]
 size = Vector2(44, 53)
 
-[node name="TreeBullet" type="Area2D" groups=["Bullet"]]
+[node name="TreeBullet" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_k4mx6")
 
-[node name="PineconeSpriteProjectile" type="Sprite2D" parent="."]
+[node name="PineconeSpriteProjectile" type="Sprite2D" parent="." groups=["enemy"]]
 position = Vector2(-1.99999, -4.49998)
 scale = Vector2(0.394531, 0.430664)
 texture = ExtResource("2_8ensc")
