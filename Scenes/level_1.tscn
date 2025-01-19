@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bscur1ynoyaa3"]
+[gd_scene load_steps=16 format=3 uid="uid://bop22xy7isd8y"]
 
 [ext_resource type="Texture2D" uid="uid://c5qgahbg6k1wj" path="res://Assets/Background/ground&water.png" id="1_lkom7"]
 [ext_resource type="PackedScene" uid="uid://b7rgqwleigmlw" path="res://Scenes/r_ock.tscn" id="2_qdww8"]
