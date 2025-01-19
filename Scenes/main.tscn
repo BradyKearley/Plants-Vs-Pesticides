@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ba3jxk4c6u0k2" path="res://Assets/dashSpritePack/dashSprite1.png" id="4_atlr6"]
 [ext_resource type="PackedScene" uid="uid://m0g4yl3oryg3" path="res://Scenes/spike_lee.tscn" id="4_mdr4i"]
 [ext_resource type="Texture2D" uid="uid://on6v77gtb67i" path="res://Assets/healthBar.png" id="6_jjsaa"]
-[ext_resource type="PackedScene" uid="uid://kdv6ew6cis1x" path="res://mainmenu/m_bouta_bust.tscn" id="9_m4pex"]
+[ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="9_m4pex"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvdop"]
 animations = [{
