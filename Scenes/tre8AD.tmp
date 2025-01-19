@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/tree.gd" id="1_f6pnf"]
 [ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="2_4pllb"]
 [ext_resource type="PackedScene" uid="uid://48by2phh78cg" path="res://m_bouta_bust_bullet.tscn" id="3_fn4uf"]
-[ext_resource type="Texture2D" uid="uid://p6lo1q2vwki1" path="res://Assets/treeSpritePack/treeSprite0.png" id="3_pa6av"]
-[ext_resource type="Texture2D" uid="uid://rwtdtpsxf4ae" path="res://Assets/treeSpritePack/treeSprite1.png" id="4_ubw53"]
+[ext_resource type="Texture2D" uid="uid://t6acb8km1m4h" path="res://Assets/treeSpritePack/treeSprite0.png" id="3_pa6av"]
+[ext_resource type="Texture2D" uid="uid://oiuwykk8u7xw" path="res://Assets/treeSpritePack/treeSprite1.png" id="4_ubw53"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_auwur"]
 animations = [{
@@ -54,11 +54,8 @@ position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_2uq0h")
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 2.0
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 8.0
 
-[connection signal="body_entered" from="Detection Roots" to="." method="_on_detection_roots_body_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
