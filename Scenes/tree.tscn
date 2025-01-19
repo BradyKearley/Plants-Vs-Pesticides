@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://kj3wr8uh8hdb"]
+[gd_scene load_steps=13 format=3 uid="uid://kj3wr8uh8hdb"]
 
 [ext_resource type="Script" path="res://Scenes/tree.gd" id="1_f6pnf"]
 [ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="2_4pllb"]
 [ext_resource type="PackedScene" uid="uid://48by2phh78cg" path="res://m_bouta_bust_bullet.tscn" id="3_fn4uf"]
 [ext_resource type="Texture2D" uid="uid://p6lo1q2vwki1" path="res://Assets/treeSpritePack/treeSprite0.png" id="3_pa6av"]
+[ext_resource type="PackedScene" uid="uid://bqb0ejxyoy4cw" path="res://grout.tscn" id="4_dn5ba"]
 [ext_resource type="Texture2D" uid="uid://rwtdtpsxf4ae" path="res://Assets/treeSpritePack/treeSprite1.png" id="4_ubw53"]
 [ext_resource type="Texture2D" uid="uid://j3q0flbfan8p" path="res://Assets/healthBar2.png" id="6_0pfb1"]
 [ext_resource type="Script" path="res://Scenes/health_bar.gd" id="7_l7srl"]
@@ -35,6 +36,7 @@ size = Vector2(256.5, 887)
 script = ExtResource("1_f6pnf")
 MrBust = ExtResource("2_4pllb")
 Treebullet = ExtResource("3_fn4uf")
+Branch = ExtResource("4_dn5ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_auwur")
