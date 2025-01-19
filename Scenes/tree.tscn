@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://kj3wr8uh8hdb"]
+
+[ext_resource type="Texture2D" uid="uid://oalmqfg8mxq1" path="res://Assets/pineconeSpritePack/pineconeSprite0.png" id="1_831mx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_auwur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_831mx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4k6b1"]
+radius = 667.68
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13fab"]
+size = Vector2(73, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uq0h"]
+size = Vector2(62, 132)
+
+[node name="Tree" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_auwur")
+
+[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
+shape = SubResource("CircleShape2D_4k6b1")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["enemy"]]
+position = Vector2(1.5, -13.5)
+shape = SubResource("RectangleShape2D_13fab")
+
+[node name="StunTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_2uq0h")
