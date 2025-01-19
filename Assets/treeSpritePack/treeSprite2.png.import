@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://w0iyqfr13puc"
+=======
+uid="uid://cnwym55pr2k1i"
+>>>>>>> c7773a70ae2fea4f3719a5b578ae58a8b14703ab
 path="res://.godot/imported/treeSprite2.png-baf646af471fc6cdb3a5d2f2ddb70517.ctex"
 metadata={
 "vram_texture": false
