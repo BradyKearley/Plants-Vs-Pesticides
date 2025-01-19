@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0v85wvi6ogu6"]
+[gd_scene load_steps=17 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="9_m4pex"]
 [ext_resource type="AudioStream" uid="uid://c1puac4y4ebf0" path="res://Assets/gameMusic1.mp3" id="10_1702s"]
 [ext_resource type="PackedScene" uid="uid://kj3wr8uh8hdb" path="res://Scenes/tree.tscn" id="11_wfdjn"]
+[ext_resource type="PackedScene" path="res://powerupSeed.tscn" id="15_57dxw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvdop"]
 animations = [{
@@ -104,5 +105,9 @@ position = Vector2(5031, -2122)
 
 [node name="Spike Lee2" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(5923, -973)
+
+[node name="Area2D" parent="." instance=ExtResource("15_57dxw")]
+position = Vector2(943, -240)
+scale = Vector2(10, 10)
 
 [connection signal="timeout" from="Ronald/CanvasLayer/Time/GameTime" to="Ronald/CanvasLayer/Time" method="_on_game_time_timeout"]

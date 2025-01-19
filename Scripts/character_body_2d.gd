@@ -1,12 +1,14 @@
 extends CharacterBody2D
 @export var bulletScene: PackedScene
-const SPEED = 600.0
+var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
 var canDash = true
 var canShoot = true
 var dashSpeed = 1
 var dashCooldown
 var health = 100
+var rng = RandomNumberGenerator.new()
+var my_random_number = null
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
@@ -79,3 +81,12 @@ func _on_bounding_box_area_entered(area: Area2D) -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		health -= 5
+	elif area.is_in_group("powerUp"):
+		my_random_number = rng.randf_range(0, 4)
+		print(my_random_number)
+		if my_random_number <= 1:
+			health += 10
+			if health > 100:
+				health = 100
+		elif my_random_number <= 2 && my_random_number > 1:
+			SPEED += 100

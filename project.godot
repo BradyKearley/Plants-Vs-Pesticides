@@ -26,6 +26,7 @@ window/stretch/mode="viewport"
 enemy=""
 Bullet=""
 Player=""
+powerUps=""
 
 [input]
 
