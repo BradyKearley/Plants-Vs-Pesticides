@@ -97,3 +97,4 @@ volume_db = -12.0
 [connection signal="area_entered" from="BoundingBox" to="." method="_on_bounding_box_area_entered"]
 [connection signal="body_entered" from="BoundingBox" to="." method="_on_bounding_box_body_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

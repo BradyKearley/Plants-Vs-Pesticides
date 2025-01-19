@@ -8,6 +8,11 @@ var dashSpeed = 1
 var dashCooldown
 var health = 100
 
+var inBossRange = false
+@onready var background_music = $AudioStreamPlayer2D
+@onready var boss_music = $AudioStreamPlayer2D2
+@export var Main :AudioStreamMP3
+@export var Boss :AudioStreamMP3
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 func _process(delta: float) -> void:
@@ -79,3 +84,23 @@ func _on_bounding_box_area_entered(area: Area2D) -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		health -= 5
+	if area.is_in_group("Tree"):
+		inBossRange = true
+		switch_to_boss_music()
+
+
+func _on_hitbox_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Tree"):
+		inBossRange = false
+		switch_to_background_music()
+# Function to switch to boss music
+func switch_to_boss_music():
+	if background_music.playing:
+		background_music.stop()
+	boss_music.play()
+
+# Function to switch back to background music
+func switch_to_background_music():
+	if boss_music.playing:
+		boss_music.stop()
+	background_music.play()

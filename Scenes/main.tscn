@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0v85wvi6ogu6"]
+[gd_scene load_steps=18 format=3 uid="uid://d0v85wvi6ogu6"]
 
 [ext_resource type="PackedScene" uid="uid://crvtnlu8onmb4" path="res://Scenes/ronald.tscn" id="1_71t18"]
 [ext_resource type="PackedScene" uid="uid://b7r8tnnmxk3qe" path="res://Scenes/Enemy_1.tscn" id="2_l4bj1"]
@@ -13,7 +13,9 @@
 [ext_resource type="Script" path="res://Scenes/time.gd" id="8_uclqb"]
 [ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="9_m4pex"]
 [ext_resource type="AudioStream" uid="uid://c1puac4y4ebf0" path="res://Assets/gameMusic1.mp3" id="10_1702s"]
+[ext_resource type="Script" path="res://Scenes/audio_stream_player_2d.gd" id="11_kr6um"]
 [ext_resource type="PackedScene" uid="uid://kj3wr8uh8hdb" path="res://Scenes/tree.tscn" id="11_wfdjn"]
+[ext_resource type="AudioStream" uid="uid://8v6j7mwiiuyy" path="res://Assets/bossTheme.mp3" id="12_0d4qc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvdop"]
 animations = [{
@@ -76,13 +78,11 @@ script = ExtResource("8_uclqb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Ronald"]
 stream = ExtResource("10_1702s")
-volume_db = -12.0
 autoplay = true
+script = ExtResource("11_kr6um")
 
-[node name="Spike Lee" parent="Ronald/AudioStreamPlayer2D" instance=ExtResource("4_mdr4i")]
-position = Vector2(5210, 430)
-
-[node name="mBoutaBust" parent="Ronald/AudioStreamPlayer2D/Spike Lee" instance=ExtResource("9_m4pex")]
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Ronald"]
+stream = ExtResource("12_0d4qc")
 
 [node name="Spike Lee" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(1747, -844)
@@ -104,5 +104,11 @@ position = Vector2(5031, -2122)
 
 [node name="Spike Lee2" parent="." instance=ExtResource("4_mdr4i")]
 position = Vector2(5923, -973)
+
+[node name="Spike Lee3" parent="." instance=ExtResource("4_mdr4i")]
+position = Vector2(5210, 430)
+
+[node name="mBoutaBust4" parent="." instance=ExtResource("9_m4pex")]
+position = Vector2(5210, 430)
 
 [connection signal="timeout" from="Ronald/CanvasLayer/Time/GameTime" to="Ronald/CanvasLayer/Time" method="_on_game_time_timeout"]

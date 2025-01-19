@@ -26,6 +26,8 @@ window/stretch/mode="viewport"
 enemy=""
 Bullet=""
 Player=""
+BossMusic=""
+Tree=""
 
 [input]
 

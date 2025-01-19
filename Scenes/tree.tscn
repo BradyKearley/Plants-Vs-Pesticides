@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4k6b1"]
-radius = 2225.03
+radius = 3506.04
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13fab"]
 size = Vector2(73, 139)
@@ -53,7 +53,7 @@ size = Vector2(73, 139)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2uq0h"]
 size = Vector2(256.5, 887)
 
-[node name="Tree" type="CharacterBody2D" groups=["enemy"]]
+[node name="Tree" type="CharacterBody2D" groups=["Tree", "enemy"]]
 script = ExtResource("1_f6pnf")
 MrBust = ExtResource("2_4pllb")
 Treebullet = ExtResource("3_fn4uf")
@@ -63,18 +63,18 @@ Branch = ExtResource("4_dn5ba")
 sprite_frames = SubResource("SpriteFrames_auwur")
 animation = &"Phase2"
 
-[node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
+[node name="Detection Roots" type="Area2D" parent="." groups=["Tree", "enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Roots" groups=["Tree", "enemy"]]
 shape = SubResource("CircleShape2D_4k6b1")
 
-[node name="Hitbox" type="Area2D" parent="." groups=["enemy"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["Tree", "enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["Tree", "enemy"]]
 position = Vector2(1.5, -13.5)
 shape = SubResource("RectangleShape2D_13fab")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Tree", "enemy"]]
 position = Vector2(-34.25, -10)
 shape = SubResource("RectangleShape2D_2uq0h")
 
