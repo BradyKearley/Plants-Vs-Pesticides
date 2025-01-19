@@ -50,10 +50,10 @@ func _on_dash_timer_timeout() -> void:
 func reduceDashCooldown(reduction:int):
 	$DashTimer.wait_time -=reduction
 	
-	
 func shoot():
 	if canShoot:
 		canShoot = false
+		$ShootSound.play()
 		$ShootTimer.start()
 		var bullet = bulletScene.instantiate()
 		bullet.global_position = global_position  # Set bullet spawn position
