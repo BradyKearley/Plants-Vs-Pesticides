@@ -12,7 +12,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 func _process(delta: float) -> void:
 	if health <=0:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://Scenes/mainmenu.tscn")
 	
 	var mouse_position = get_global_mouse_position()
 	look_at(mouse_position)
