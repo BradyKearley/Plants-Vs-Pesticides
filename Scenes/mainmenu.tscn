@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://irwleur1xfsp"]
+[gd_scene load_steps=8 format=3 uid="uid://irwleur1xfsp"]
 
 [ext_resource type="Script" path="res://mainmenu/mainmenu.gd" id="1_uv308"]
 [ext_resource type="PackedScene" uid="uid://d0v85wvi6ogu6" path="res://Scenes/main.tscn" id="2_s044d"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cn34xvm8g50tn" path="res://pixel-game-font/PixelGame-R9AZe.otf" id="4_n7esa"]
 [ext_resource type="AudioStream" uid="uid://b3vhno5bkmngp" path="res://Assets/menuTheme.mp3" id="5_j3wul"]
 [ext_resource type="PackedScene" uid="uid://udekgakj0hxt" path="res://h_slider.tscn" id="5_vh5ts"]
+[ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="7_4ddmp"]
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -118,4 +119,6 @@ bus_name = "Master"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_j3wul")
+volume_db = -24.0
 autoplay = true
+script = ExtResource("7_4ddmp")

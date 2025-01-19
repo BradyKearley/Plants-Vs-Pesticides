@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://kj3wr8uh8hdb"]
+[gd_scene load_steps=17 format=3 uid="uid://kj3wr8uh8hdb"]
 
 [ext_resource type="Script" path="res://Scenes/tree.gd" id="1_f6pnf"]
 [ext_resource type="PackedScene" uid="uid://bare08em7xo21" path="res://mainmenu/m_bouta_bust.tscn" id="2_4pllb"]
@@ -6,11 +6,32 @@
 [ext_resource type="Texture2D" uid="uid://p6lo1q2vwki1" path="res://Assets/treeSpritePack/treeSprite0.png" id="3_pa6av"]
 [ext_resource type="PackedScene" uid="uid://bqb0ejxyoy4cw" path="res://grout.tscn" id="4_dn5ba"]
 [ext_resource type="Texture2D" uid="uid://rwtdtpsxf4ae" path="res://Assets/treeSpritePack/treeSprite1.png" id="4_ubw53"]
+[ext_resource type="Texture2D" uid="uid://01xhfnns0fmr" path="res://Assets/newTreeSpritePack/treeSpriteNew0.png" id="5_jplu5"]
 [ext_resource type="Texture2D" uid="uid://j3q0flbfan8p" path="res://Assets/healthBar2.png" id="6_0pfb1"]
+[ext_resource type="Texture2D" uid="uid://cr5niyldmumcp" path="res://Assets/newTreeSpritePack/treeSpriteNew1.png" id="6_xhrro"]
 [ext_resource type="Script" path="res://Scenes/health_bar.gd" id="7_l7srl"]
+[ext_resource type="Texture2D" uid="uid://lbgwo7cj4yrr" path="res://Assets/newTreeSpritePack/treeSpriteNew2.png" id="7_twy5o"]
+[ext_resource type="Texture2D" uid="uid://dbesyihinbdvf" path="res://Assets/newTreeSpritePack/treeSpriteNew3.png" id="8_65maw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_auwur"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jplu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xhrro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_twy5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_65maw")
+}],
+"loop": true,
+"name": &"Phase2",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_pa6av")
@@ -40,7 +61,7 @@ Branch = ExtResource("4_dn5ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_auwur")
-animation = &"idle"
+animation = &"Phase2"
 
 [node name="Detection Roots" type="Area2D" parent="." groups=["enemy"]]
 
@@ -61,7 +82,7 @@ shape = SubResource("RectangleShape2D_2uq0h")
 wait_time = 2.0
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 offset_left = -367.0

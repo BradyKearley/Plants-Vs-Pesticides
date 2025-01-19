@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var plant_speed = 200
+var plant_speed = 300
 var player_detected = false
 var player: Node2D = null
 var stop_distance = 100  # Minimum distance to stop moving
@@ -61,7 +61,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		$StunTimer.start()
 		spin_360()
 		stunnded = true
-		plant_speed = 350
+		plant_speed = 450
 
 
 func _on_stun_timer_timeout() -> void:

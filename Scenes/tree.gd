@@ -28,9 +28,13 @@ func hit():
 	if health <= 0:
 		queue_free()
 	if health < 500 and phase == 1:
+		$AnimatedSprite2D.play("Phase2")
 		spawnGrout()
+		$AttackTimer.wait_time = 1.5
 		phase = 2
 	if health < 250 and phase == 2:
+		$AnimatedSprite2D.speed_scale = 1.5
+		$AttackTimer.wait_time =1
 		spawnGrout()
 		phase = 3
 func spawn():

@@ -15,6 +15,7 @@ func _ready() -> void:
 	$StunTimer.stop()
 	$ShootTimer.start()
 	$AnimatedSprite2D.play("idle")
+	
 func _physics_process(delta):
 	if player_detected and player and not stunnded:
 		var distance_to_player = position.distance_to(player.position)
